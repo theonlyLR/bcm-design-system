@@ -3,3 +3,5 @@ storybook-static
 .cache
 .DS_Store
 *.log
+.vercel
+.env*

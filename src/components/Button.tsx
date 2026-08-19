@@ -3,6 +3,8 @@ import React from 'react';
 export type ButtonType = 'primary' | 'transparent' | 'outline' | 'secondary';
 
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  /** Storybook / Figma Brand prop (e.g. Zkk, Zikoko, TC, TechCabal, TCi, BCM) */
+  brand?: string;
   /** Figma Property: Type */
   typeVariant?: ButtonType;
   /** Figma Layer: "Button" text */
@@ -17,6 +19,7 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
 }
 
 export const Button = ({
+  brand,
   typeVariant = 'primary',
   label = 'Button',
   isLoading = false,
@@ -27,32 +30,44 @@ export const Button = ({
   style,
   ...props
 }: ButtonProps) => {
-  // Get variant background, text color, and border
+  // Normalize brand prop values (e.g., "Zkk" or "Zikoko" -> "zikoko")
+  const normalizeBrand = (b?: string) => {
+    if (!b) return undefined;
+    const lower = b.toLowerCase().trim();
+    if (lower.includes('zikoko') || lower === 'zkk') return 'zikoko';
+    if (lower.includes('techcabal') || lower === 'tc' || lower.includes('primary tech cabal')) return 'techcabal';
+    if (lower.includes('tci') || lower.includes('insights')) return 'tci';
+    if (lower.includes('bcm')) return 'bcm';
+    return lower;
+  };
+
+  const activeTheme = normalizeBrand(brand);
+
   const getVariantStyles = (): React.CSSProperties => {
     switch (typeVariant) {
       case 'transparent':
         return {
           backgroundColor: 'transparent',
-          color: 'var(--Colors-Secondary-Text-Label, #F23204)',
+          color: 'var(--Colors-Secondary-Text-Label)',
           borderColor: 'transparent',
         };
       case 'outline':
         return {
           backgroundColor: 'transparent',
-          color: 'var(--Colors-Secondary-Text-Label, #F23204)',
-          borderColor: 'var(--Colors-Secondary-Button-stroke-Default, #FB4E22)',
+          color: 'var(--Colors-Secondary-Text-Label)',
+          borderColor: 'var(--Colors-Secondary-Button-stroke-Default)',
         };
       case 'secondary':
         return {
-          backgroundColor: 'var(--Colors-Secondary-Button-fill-Default, #FFEFEB)',
-          color: 'var(--Colors-Secondary-Text-Label, #F23204)',
-          borderColor: 'var(--Colors-Secondary-Button-stroke-Default, #FB4E22)',
+          backgroundColor: 'var(--Colors-Secondary-Button-fill-Default)',
+          color: 'var(--Colors-Secondary-Text-Label)',
+          borderColor: 'var(--Colors-Secondary-Button-stroke-Default)',
         };
       case 'primary':
       default:
         return {
-          backgroundColor: 'var(--Colors-Primary-Button-fill-Default, #F23204)',
-          color: 'var(--Colors-Primary-Text-and-icon-Default, #FFFFFF)',
+          backgroundColor: 'var(--Colors-Primary-Button-fill-Default)',
+          color: 'var(--Colors-Primary-Text-and-icon-Default)',
           borderColor: 'transparent',
         };
     }
@@ -97,6 +112,7 @@ export const Button = ({
 
   return (
     <button
+      data-theme={activeTheme}
       style={combinedStyles}
       disabled={disabled || isLoading}
       className={className}

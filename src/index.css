@@ -7,329 +7,73 @@
   /* Zikoko Primitives */
   --Colours-Brands-Zikoko-Purple-50: #F7F2FDFF;
   --Colours-Brands-Zikoko-Purple-100: #EDE0FBFF;
-  --Colours-Brands-Zikoko-Purple-200: #DEC5F7FF;
-  --Colours-Brands-Zikoko-Purple-300: #CCA5F3FF;
-  --Colours-Brands-Zikoko-Purple-400: #BD8AEFFF;
   --Colours-Brands-Zikoko-Purple-500: #AB6BEBFF;
   --Colours-Brands-Zikoko-Purple-600: #9A2BC2FF;
-  --Colours-Brands-Zikoko-Purple-700: #731BCAFF;
   --Colours-Brands-Zikoko-Purple-800: #570095FF;
-  --Colours-Brands-Zikoko-Purple-900: #260943FF;
-  --Colours-Brands-Zikoko-Purple-950: #140524FF;
-  --Colours-Brands-Zikoko-Indigo-50: #F6F5FFFF;
-  --Colours-Brands-Zikoko-Yellow-50: #FFFBF5FF;
-  --Colours-Brands-Zikoko-Sea-green-50: #EBFFF8FF;
-  --Colours-Brands-Zikoko-Sky-Blue-50: #EDF8FCFF;
-  --Colours-Brands-Zikoko-Sky-Blue-100: #E0F3FAFF;
-  --Colours-Brands-Zikoko-Sky-Blue-200: #BDE5F5FF;
-  --Colours-Brands-Zikoko-Sky-Blue-300: #9ED9F0FF;
-  --Colours-Brands-Zikoko-Sky-Blue-400: #7BCBEAFF;
-  --Colours-Brands-Zikoko-Sky-Blue-500: #5CBEE5FF;
-  --Colours-Brands-Zikoko-Sky-Blue-600: #39B1E0FF;
-  --Colours-Brands-Zikoko-Sky-Blue-700: #1C8AB5FF;
-  --Colours-Brands-Zikoko-Sky-Blue-800: #135E7BFF;
-  --Colours-Brands-Zikoko-Sky-Blue-900: #0A2F3EFF;
-  --Colours-Brands-Zikoko-Sky-Blue-950: #05171FFF;
-  --Colours-Brands-Zikoko-Sea-green-100: #D2FEEFFF;
-  --Colours-Brands-Zikoko-Sea-green-200: #AAFEE2FF;
-  --Colours-Brands-Zikoko-Sea-green-300: #7DFDD2FF;
-  --Colours-Brands-Zikoko-Sea-green-400: #4FFCC3FF;
-  --Colours-Brands-Zikoko-Sea-green-500: #27FBB5FF;
-  --Colours-Brands-Zikoko-Sea-green-600: #04F2A1FF;
-  --Colours-Brands-Zikoko-Sea-green-700: #03B579FF;
-  --Colours-Brands-Zikoko-Sea-green-800: #007647FF;
-  --Colours-Brands-Zikoko-Sea-green-900: #013C28FF;
-  --Colours-Brands-Zikoko-Sea-green-950: #011E14FF;
-  --Colours-Brands-Zikoko-Yellow-100: #FEF7EBFF;
-  --Colours-Brands-Zikoko-Yellow-200: #FDEDD3FF;
-  --Colours-Brands-Zikoko-Yellow-300: #FCE4BDFF;
-  --Colours-Brands-Zikoko-Yellow-400: #F9CB80FF;
-  --Colours-Brands-Zikoko-Yellow-500: #F7B346FF;
-  --Colours-Brands-Zikoko-Yellow-600: #FFB415FF;
-  --Colours-Brands-Zikoko-Yellow-700: #B47208FF;
-  --Colours-Brands-Zikoko-Yellow-800: #7A4D06FF;
-  --Colours-Brands-Zikoko-Yellow-900: #3B2503FF;
-  --Colours-Brands-Zikoko-Yellow-950: #1D1301FF;
   --Colours-Brands-Zikoko-Indigo-100: #EDEBFFFF;
-  --Colours-Brands-Zikoko-Indigo-200: #DAD6FFFF;
-  --Colours-Brands-Zikoko-Indigo-300: #C8C2FFFF;
-  --Colours-Brands-Zikoko-Indigo-400: #B6ADFFFF;
-  --Colours-Brands-Zikoko-Indigo-500: #A196FFFF;
-  --Colours-Brands-Zikoko-Indigo-600: #5A47FFFF;
-  --Colours-Brands-Zikoko-Indigo-700: #1800F5FF;
-  --Colours-Brands-Zikoko-Indigo-800: #1000A3FF;
-  --Colours-Brands-Zikoko-Indigo-900: #080052FF;
-  --Colours-Brands-Zikoko-Indigo-950: #040029FF;
 
   /* TechCabal Primitives */
   --Colours-Brands-TC-Cherry-Red-50: #FFEFEBFF;
-  --Colours-Brands-TC-Cherry-Red-100: #FFE1DAFF;
-  --Colours-Brands-TC-Cherry-Red-200: #FEC3B4FF;
-  --Colours-Brands-TC-Cherry-Red-300: #FDA691FF;
-  --Colours-Brands-TC-Cherry-Red-400: #FC8669FF;
-  --Colours-Brands-TC-Cherry-Red-500: #FC6A45FF;
   --Colours-Brands-TC-Cherry-Red-600: #FB4E22FF;
   --Colours-Brands-TC-Cherry-Red-700: #F23204FF;
-  --Colours-Brands-TC-Cherry-Red-800: #A12203FF;
   --Colours-Brands-TC-Cherry-Red-900: #501101FF;
-  --Colours-Brands-TC-Cherry-Red-950: #280901FF;
-  --Colours-Brands-TC-Green-50: #EBFFF8FF;
-  --Colours-Brands-TC-Orange-50: #FFF4EBFF;
-  --Colours-Brands-TC-Orange-100: #FFE9D6FF;
-  --Colours-Brands-TC-Orange-200: #FFD1A8FF;
-  --Colours-Brands-TC-Orange-300: #FFBB80FF;
-  --Colours-Brands-TC-Orange-400: #FFA352FF;
-  --Colours-Brands-TC-Orange-500: #FF8D29FF;
-  --Colours-Brands-TC-Orange-600: #FD7400FF;
-  --Colours-Brands-TC-Orange-700: #BD5800FF;
-  --Colours-Brands-TC-Orange-800: #803C00FF;
-  --Colours-Brands-TC-Orange-900: #3D1D00FF;
-  --Colours-Brands-TC-Orange-950: #1F0E00FF;
-  --Colours-Brands-TC-Green-100: #D2FEEFFF;
-  --Colours-Brands-TC-Green-200: #AAFEE2FF;
-  --Colours-Brands-TC-Green-300: #7DFDD2FF;
-  --Colours-Brands-TC-Green-400: #4FFCC3FF;
-  --Colours-Brands-TC-Green-500: #27FBB5FF;
-  --Colours-Brands-TC-Green-600: #04F2A1FF;
-  --Colours-Brands-TC-Green-700: #03B579FF;
-  --Colours-Brands-TC-Green-800: #007647FF;
-  --Colours-Brands-TC-Green-900: #013C28FF;
-  --Colours-Brands-TC-Green-950: #011E14FF;
 
-  /* TCi Primitives */
-  --Colours-Brands-TCi-Black-50: #CFD0D0FF;
-  --Colours-Brands-TCi-Black-100: #ADADADFF;
-  --Colours-Brands-TCi-Black-200: #8B8C8CFF;
-  --Colours-Brands-TCi-Black-300: #676868FF;
-  --Colours-Brands-TCi-Black-400: #4D4E4EFF;
-  --Colours-Brands-TCi-Black-500: #353535FF;
+  /* TCi & BCM Primitives */
   --Colours-Brands-TCi-Black-600: #292929FF;
-  --Colours-Brands-TCi-Black-700: #1F1F1FFF;
   --Colours-Brands-TCi-Black-800: #181818FF;
-  --Colours-Brands-TCi-Black-900: #101010FF;
   --Colours-Brands-TCi-Black-950: #000000FF;
-  --Colours-Brands-TCi-School-bus-Yellow-50: #FFFDEBFF;
-  --Colours-Brands-TCi-School-bus-Yellow-100: #FFFAD6FF;
-  --Colours-Brands-TCi-School-bus-Yellow-200: #FFF5A8FF;
-  --Colours-Brands-TCi-School-bus-Yellow-300: #FFF080FF;
-  --Colours-Brands-TCi-School-bus-Yellow-400: #FFEB57FF;
-  --Colours-Brands-TCi-School-bus-Yellow-500: #FFE629FF;
-  --Colours-Brands-TCi-School-bus-Yellow-600: #FFE000FF;
-  --Colours-Brands-TCi-School-bus-Yellow-700: #C2AB00FF;
-  --Colours-Brands-TCi-School-bus-Yellow-800: #807100FF;
-  --Colours-Brands-TCi-School-bus-Yellow-900: #423B00FF;
-  --Colours-Brands-TCi-School-bus-Yellow-950: #1F1B00FF;
-  --Colours-Brands-TCi-Grey-50: #FFFFFFFF;
-  --Colours-Brands-TCi-Grey-100: #F5F5F5FF;
   --Colours-Brands-TCi-Grey-200: #ECECECFF;
-  --Colours-Brands-TCi-Grey-300: #CFCFCFFF;
-  --Colours-Brands-TCi-Grey-400: #ACACACFF;
-  --Colours-Brands-TCi-Grey-500: #949494FF;
-  --Colours-Brands-TCi-Grey-600: #757575FF;
-  --Colours-Brands-TCi-Grey-700: #595959FF;
-  --Colours-Brands-TCi-Grey-800: #3B3B3BFF;
-  --Colours-Brands-TCi-Grey-900: #1F1F1FFF;
-  --Colours-Brands-TCi-Grey-950: #0F0F0FFF;
-  --Colours-Brands-TCi-Green-50: #F5FBF3FF;
-  --Colours-Brands-TCi-Green-100: #EFF9EBFF;
-  --Colours-Brands-TCi-Green-200: #DFF3D8FF;
-  --Colours-Brands-TCi-Green-300: #CEEDC4FF;
-  --Colours-Brands-TCi-Green-400: #BBE6ACFF;
-  --Colours-Brands-TCi-Green-500: #ACE19AFF;
-  --Colours-Brands-TCi-Green-600: #7ACF5EFF;
-  --Colours-Brands-TCi-Green-700: #00E100FF;
-  --Colours-Brands-TCi-Green-800: #387623FF;
-  --Colours-Brands-TCi-Green-900: #1C3B12FF;
-  --Colours-Brands-TCi-Green-950: #0D1C08FF;
-
-  /* BCM Primitives */
-  --Colours-Brands-BCM-Black-50: #CFD0D0FF;
-  --Colours-Brands-BCM-Black-100: #ADADADFF;
-  --Colours-Brands-BCM-Black-200: #8B8C8CFF;
-  --Colours-Brands-BCM-Black-300: #676868FF;
-  --Colours-Brands-BCM-Black-400: #4D4E4EFF;
-  --Colours-Brands-BCM-Black-500: #353535FF;
-  --Colours-Brands-BCM-Black-600: #292929FF;
-  --Colours-Brands-BCM-Black-700: #1F1F1FFF;
-  --Colours-Brands-BCM-Black-800: #181818FF;
-  --Colours-Brands-BCM-Black-900: #101010FF;
-  --Colours-Brands-BCM-Black-950: #000000FF;
-  --Colours-Brands-BCM-Royal-Purple-50: #F5ECF9FF;
-  --Colours-Brands-BCM-Royal-Purple-100: #EDDCF4FF;
-  --Colours-Brands-BCM-Royal-Purple-200: #D9B5E8FF;
-  --Colours-Brands-BCM-Royal-Purple-300: #C792DDFF;
-  --Colours-Brands-BCM-Royal-Purple-400: #B46FD2FF;
-  --Colours-Brands-BCM-Royal-Purple-500: #A048C6FF;
-  --Colours-Brands-BCM-Royal-Purple-600: #8836ABFF;
-  --Colours-Brands-BCM-Royal-Purple-700: #6B2A86FF;
-  --Colours-Brands-BCM-Royal-Purple-800: #471C59FF;
-  --Colours-Brands-BCM-Royal-Purple-900: #250F2FFF;
-  --Colours-Brands-BCM-Royal-Purple-950: #130717FF;
-  --Colours-Brands-BCM-Blue-100: #E0EFFFFF;
-  --Colours-Brands-BCM-Blue-200: #C2DEFFFF;
-  --Colours-Brands-BCM-Blue-300: #A3CEFFFF;
-  --Colours-Brands-BCM-Blue-400: #85BEFFFF;
-  --Colours-Brands-BCM-Blue-500: #69AEFFFF;
-  --Colours-Brands-BCM-Blue-600: #1F87FFFF;
-  --Colours-Brands-BCM-Blue-700: #0064D6FF;
-  --Colours-Brands-BCM-Blue-800: #00438FFF;
-  --Colours-Brands-BCM-Blue-900: #002147FF;
-  --Colours-Brands-BCM-Blue-950: #101829FF;
-
-  /* Neutrals */
-  --Colours-Neutrals-Grey-50: #FFFFFFFF;
-  --Colours-Neutrals-Grey-100: #FAFAFAFF;
-  --Colours-Neutrals-Grey-200: #ECECECFF;
-  --Colours-Neutrals-Grey-300: #CFCFCFFF;
-  --Colours-Neutrals-Grey-400: #ACACACFF;
-  --Colours-Neutrals-Grey-500: #949494FF;
-  --Colours-Neutrals-Grey-600: #757575FF;
-  --Colours-Neutrals-Grey-700: #595959FF;
+  --Colours-Neutrals-Black-500: #353535FF;
   --Colours-Neutrals-Grey-800: #373736FF;
-  --Colours-Neutrals-Grey-900: #1F1F1FFF;
-  --Colours-Neutrals-Grey-950: #0F0F0FFF;
-  --Colours-Neutrals-Green-100: #DBEECDFF;
-  --Colours-Neutrals-Green-400: #71BB3FFF;
-  --Colours-Neutrals-Green-500: #548C2FFF;
-  --Colours-Neutrals-Red-100: #FFDBDDFF;
-  --Colours-Neutrals-Red-200: #FFB8BBFF;
-  --Colours-Neutrals-Red-500: #FF525AFF;
-  --Colours-Neutrals-Red-600: #FF2E38FF;
 
-  /* Typography Families */
-  --Typography-Font-family-TC-Primary: 'Open Sans', sans-serif;
-  --Typography-Font-family-Zikoko-Primary: 'Cabin', sans-serif;
-  --Typography-Font-family-TCi-Primary: 'IBM Plex Sans', sans-serif;
-  --Typography-Font-family-BCM-Primary: 'Urbanist', sans-serif;
-
-  /* Spacing & Radii */
-  --Spacing-&-Corner-radius-xxxs: 4px;
-  --Spacing-&-Corner-radius-xxs: 8px;
-  --Spacing-&-Corner-radius-xs: 12px;
-  --Spacing-&-Corner-radius-s: 16px;
-  --Spacing-&-Corner-radius-m: 20px;
-  --Spacing-&-Corner-radius-l: 24px;
-  --Spacing-&-Corner-radius-xl: 32px;
-  --Spacing-&-Corner-radius-xxl: 40px;
-  --Spacing-&-Corner-radius-xxxl: 48px;
-  --Spacing-&-Corner-radius-xxxxl: 64px;
-
-  /* Border Thickness */
-  --Border-thickness-s: 1px;
-  --Border-thickness-m: 2px;
-  --Border-thickness-l: 3px;
-  --Border-thickness-xl: 4px;
+  /* Corner Radius */
+  --Corner-radius-8px: 8px;
 }
 
 /* -------------------------------------------------------------------------- */
-/* TIER 2: BRAND TOKENS                                                        */
+/* TIER 2: BRAND THEMES                                                        */
 /* -------------------------------------------------------------------------- */
 
 /* Brand 1: TechCabal */
-:root, [data-theme="techcabal"] {
-  --Colors-Primary-Button-fill-Default: var(--Colours-Brands-TC-Cherry-Red-700);
-  --Colors-Primary-Button-fill-Hover: var(--Colours-Brands-TC-Cherry-Red-600);
-  --Colors-Primary-Button-fill-Pressed: var(--Colours-Brands-TC-Cherry-Red-900);
-  --Colors-Primary-Button-fill-Inactive: var(--Colours-Neutrals-Grey-100);
-  --Colors-Primary-Text-&-icon-Default: var(--Colours-Neutrals-Grey-50);
-  --Colors-Primary-Button-stroke-Default: var(--Colours-Brands-TCi-Grey-400);
-
-  --Colors-Secondary-Button-fill-Default: var(--Colours-Brands-TC-Cherry-Red-50);
-  --Colors-Secondary-Button-stroke-Default: var(--Colours-Brands-TC-Cherry-Red-600);
-  --Colors-Secondary-Text-Label: var(--Colours-Brands-TC-Cherry-Red-700);
-
-  --Colors-Error-Button-fill-Default: var(--Colours-Brands-TC-Cherry-Red-100);
-  --Colors-Error-Button-stroke-Default: var(--Colours-Brands-TC-Cherry-Red-700);
-  --Colors-Success-Button-fill-Default: var(--Colours-Neutrals-Green-100);
-  --Colors-Success-Button-stroke-Default: var(--Colours-Neutrals-Green-400);
-
-  --Typography-Font-Primary: var(--Typography-Font-family-TC-Primary);
+:root, [data-theme="techcabal"], [data-theme="tc"] {
+  --Colors-Primary-Button-fill-Default: #F23204;
+  --Colors-Primary-Button-fill-Hover: #FB4E22;
+  --Colors-Primary-Button-fill-Pressed: #501101;
+  --Colors-Secondary-Button-fill-Default: #FFEFEB;
+  --Colors-Secondary-Button-stroke-Default: #FB4E22;
+  --Colors-Secondary-Text-Label: #F23204;
+  --Colors-Primary-Text-and-icon-Default: #FFFFFF;
 }
 
 /* Brand 2: Zikoko */
-[data-theme="zikoko"] {
-  --Colors-Primary-Button-fill-Default: var(--Colours-Brands-Zikoko-Purple-600);
-  --Colors-Primary-Button-fill-Hover: var(--Colours-Brands-Zikoko-Purple-500);
-  --Colors-Primary-Button-fill-Pressed: var(--Colours-Brands-Zikoko-Purple-800);
-  --Colors-Primary-Button-fill-Inactive: var(--Colours-Neutrals-Grey-100);
-  --Colors-Primary-Text-&-icon-Default: var(--Colours-Neutrals-Grey-50);
-  --Colors-Primary-Button-stroke-Default: var(--Colours-Brands-TCi-Grey-400);
-
-  --Colors-Secondary-Button-fill-Default: var(--Colours-Brands-Zikoko-Indigo-100);
-  --Colors-Secondary-Button-stroke-Default: var(--Colours-Brands-Zikoko-Purple-500);
-  --Colors-Secondary-Text-Label: var(--Colours-Brands-Zikoko-Purple-600);
-
-  --Colors-Error-Button-fill-Default: var(--Colours-Neutrals-Red-100);
-  --Colors-Error-Button-stroke-Default: var(--Colours-Neutrals-Red-600);
-  --Colors-Success-Button-fill-Default: var(--Colours-Brands-Zikoko-Sea-green-100);
-  --Colors-Success-Button-stroke-Default: var(--Colours-Brands-Zikoko-Sea-green-400);
-
-  --Typography-Font-Primary: var(--Typography-Font-family-Zikoko-Primary);
+[data-theme="zikoko"], [data-theme="zkk"] {
+  --Colors-Primary-Button-fill-Default: #9A2BC2;
+  --Colors-Primary-Button-fill-Hover: #AB6BEB;
+  --Colors-Primary-Button-fill-Pressed: #570095;
+  --Colors-Secondary-Button-fill-Default: #EDEBFF;
+  --Colors-Secondary-Button-stroke-Default: #AB6BEB;
+  --Colors-Secondary-Text-Label: #9A2BC2;
+  --Colors-Primary-Text-and-icon-Default: #FFFFFF;
 }
 
 /* Brand 3: TCi */
 [data-theme="tci"] {
-  --Colors-Primary-Button-fill-Default: var(--Colours-Brands-TCi-Black-800);
-  --Colors-Primary-Button-fill-Hover: var(--Colours-Brands-TCi-Black-600);
-  --Colors-Primary-Button-fill-Pressed: var(--Colours-Brands-TCi-Black-950);
-  --Colors-Primary-Button-fill-Inactive: var(--Colours-Neutrals-Grey-100);
-  --Colors-Primary-Text-&-icon-Default: var(--Colours-Neutrals-Grey-50);
-  --Colors-Primary-Button-stroke-Default: var(--Colours-Brands-TCi-Black-100);
-
-  --Colors-Secondary-Button-fill-Default: var(--Colours-Brands-TCi-Grey-200);
-  --Colors-Secondary-Button-stroke-Default: var(--Colours-Neutrals-Black-500);
-  --Colors-Secondary-Text-Label: var(--Colours-Neutrals-Grey-800);
-
-  --Colors-Error-Button-fill-Default: var(--Colours-Neutrals-Off-Red-100);
-  --Colors-Error-Button-stroke-Default: var(--Colours-Neutrals-Off-Red-500);
-  --Colors-Success-Button-fill-Default: var(--Colours-Brands-TCi-Green-200);
-  --Colors-Success-Button-stroke-Default: var(--Colours-Brands-TCi-Green-500);
-
-  --Typography-Font-Primary: var(--Typography-Font-family-TCi-Primary);
+  --Colors-Primary-Button-fill-Default: #181818;
+  --Colors-Primary-Button-fill-Hover: #292929;
+  --Colors-Primary-Button-fill-Pressed: #000000;
+  --Colors-Secondary-Button-fill-Default: #ECECEC;
+  --Colors-Secondary-Button-stroke-Default: #353535;
+  --Colors-Secondary-Text-Label: #373736;
+  --Colors-Primary-Text-and-icon-Default: #FFFFFF;
 }
 
 /* Brand 4: BCM */
 [data-theme="bcm"] {
-  --Colors-Primary-Button-fill-Default: var(--Colours-Brands-TCi-Black-800);
-  --Colors-Primary-Button-fill-Hover: var(--Colours-Brands-TCi-Black-600);
-  --Colors-Primary-Button-fill-Pressed: var(--Colours-Brands-TCi-Black-950);
-  --Colors-Primary-Button-fill-Inactive: var(--Colours-Neutrals-Grey-100);
-  --Colors-Primary-Text-&-icon-Default: var(--Colours-Neutrals-Grey-50);
-  --Colors-Primary-Button-stroke-Default: var(--Colours-Brands-TCi-Black-100);
-
-  --Colors-Secondary-Button-fill-Default: var(--Colours-Brands-TCi-Grey-200);
-  --Colors-Secondary-Button-stroke-Default: var(--Colours-Neutrals-Black-500);
-  --Colors-Secondary-Text-Label: var(--Colours-Neutrals-Grey-800);
-
-  --Colors-Error-Button-fill-Default: var(--Colours-Neutrals-Off-Red-100);
-  --Colors-Error-Button-stroke-Default: var(--Colours-Neutrals-Off-Red-500);
-  --Colors-Success-Button-fill-Default: var(--Colours-Brands-TCi-Green-200);
-  --Colors-Success-Button-stroke-Default: var(--Colours-Brands-TCi-Green-500);
-
-  --Typography-Font-Primary: var(--Typography-Font-family-BCM-Primary);
-}
-
-/* -------------------------------------------------------------------------- */
-/* TIER 3: TAILWIND UTILITY MAPPING                                           */
-/* -------------------------------------------------------------------------- */
-@theme {
-  --color-btn-primary-fill: var(--Colors-Primary-Button-fill-Default);
-  --color-btn-primary-hover: var(--Colors-Primary-Button-fill-Hover);
-  --color-btn-primary-pressed: var(--Colors-Primary-Button-fill-Pressed);
-  --color-btn-primary-disabled: var(--Colors-Primary-Button-fill-Inactive);
-  --color-btn-primary-text: var(--Colors-Primary-Text-\&-icon-Default);
-  --color-btn-primary-border: var(--Colors-Primary-Button-stroke-Default);
-
-  --color-btn-secondary-fill: var(--Colors-Secondary-Button-fill-Default);
-  --color-btn-secondary-border: var(--Colors-Secondary-Button-stroke-Default);
-  --color-btn-secondary-text: var(--Colors-Secondary-Text-Label);
-
-  --color-btn-error-fill: var(--Colors-Error-Button-fill-Default);
-  --color-btn-error-border: var(--Colors-Error-Button-stroke-Default);
-
-  --color-btn-success-fill: var(--Colors-Success-Button-fill-Default);
-  --color-btn-success-border: var(--Colors-Success-Button-stroke-Default);
-
-  --font-brand: var(--Typography-Font-Primary);
-  --radius-button: var(--Spacing-\&-Corner-radius-xxs);
+  --Colors-Primary-Button-fill-Default: #181818;
+  --Colors-Primary-Button-fill-Hover: #292929;
+  --Colors-Primary-Button-fill-Pressed: #000000;
+  --Colors-Secondary-Button-fill-Default: #ECECEC;
+  --Colors-Secondary-Button-stroke-Default: #353535;
+  --Colors-Secondary-Text-Label: #373736;
+  --Colors-Primary-Text-and-icon-Default: #FFFFFF;
 }

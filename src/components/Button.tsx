@@ -1,94 +1,47 @@
 import React from 'react';
 
-export type Brand = 'TC' | 'Zkk' | 'TCi' | 'BCM';
-export type ButtonVariant = 'primary' | 'secondary' | 'outline' | 'ghost';
-export type ButtonSize = 's' | 'm' | 'l' | 'xl';
-export type ButtonState = 'default' | 'hover' | 'pressed' | 'inactive';
-
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  brand?: Brand;
-  variant?: ButtonVariant;
-  size?: ButtonSize;
-  state?: ButtonState;
-  leftIcon?: React.ReactNode;
-  rightIcon?: React.ReactNode;
-  fullWidth?: boolean;
+  variant?: 'primary' | 'secondary' | 'error' | 'success';
+  size?: 'sm' | 'md' | 'lg';
+  children: React.ReactNode;
 }
 
-const brandFontMap: Record<Brand, string> = {
-  TC: 'font-tc',
-  Zkk: 'font-zkk',
-  TCi: 'font-tci',
-  BCM: 'font-bcm',
-};
-
-const sizeMap: Record<ButtonSize, string> = {
-  s: 'px-xs py-xxs text-xs gap-xxs rounded-xs',
-  m: 'px-s py-xs text-s gap-xs rounded-s',
-  l: 'px-m py-s text-m gap-xs rounded-m',
-  xl: 'px-l py-m text-l gap-s rounded-l',
-};
-
-const getBrandStyles = (brand: Brand, variant: ButtonVariant, isInactive: boolean) => {
-  if (isInactive) {
-    return 'bg-gray-200 text-gray-400 border-transparent cursor-not-allowed';
-  }
-
-  // Exact brand colors derived from BCM primitives documentation
-  switch (variant) {
-    case 'primary':
-      switch (brand) {
-        case 'TC': return 'bg-[#D32F2F] hover:bg-[#C62828] active:bg-[#B71C1C] text-white'; // TechCabal Cherry Red
-        case 'Zkk': return 'bg-[#AB6BEB] hover:bg-[#9A2BC2] active:bg-[#731BCA] text-white'; // Zikoko Purple
-        case 'TCi': return 'bg-[#121212] hover:bg-[#2C2C2C] active:bg-[#000000] text-white'; // TC Insights Black
-        case 'BCM': return 'bg-[#4A154B] hover:bg-[#3F1142] active:bg-[#2E0D31] text-white'; // BCM Royal Purple
-      }
-      break;
-    case 'secondary':
-      return 'bg-gray-100 hover:bg-gray-200 active:bg-gray-300 text-gray-900 border-transparent';
-    case 'outline':
-      switch (brand) {
-        case 'TC': return 'border-2 border-[#D32F2F] text-[#D32F2F] hover:bg-red-50 bg-transparent';
-        case 'Zkk': return 'border-2 border-[#AB6BEB] text-[#AB6BEB] hover:bg-purple-50 bg-transparent';
-        case 'TCi': return 'border-2 border-[#121212] text-[#121212] hover:bg-gray-100 bg-transparent';
-        case 'BCM': return 'border-2 border-[#4A154B] text-[#4A154B] hover:bg-purple-50 bg-transparent';
-      }
-      break;
-    case 'ghost':
-      return 'bg-transparent hover:bg-gray-100 text-gray-800 border-transparent';
-  }
-};
-
-export const Button: React.FC<ButtonProps> = ({
-  brand = 'TC',
+export const Button = ({
   variant = 'primary',
-  size = 'm',
-  state = 'default',
-  disabled = false,
-  fullWidth = false,
-  leftIcon,
-  rightIcon,
+  size = 'md',
+  disabled,
   children,
   className = '',
   ...props
-}) => {
-  const isInactive = disabled || state === 'inactive';
-  const fontClass = brandFontMap[brand];
-  const sizeClass = sizeMap[size];
-  const brandStyle = getBrandStyles(brand, variant, isInactive);
-  const widthClass = fullWidth ? 'w-full' : 'w-auto';
+}: ButtonProps) => {
+  const baseStyles =
+    'inline-flex items-center justify-center font-medium transition-all border cursor-pointer rounded-[var(--Spacing-\\&-Corner-radius-xxs)] disabled:opacity-50 disabled:pointer-events-none disabled:bg-[var(--Colors-Primary-Button-fill-Inactive)]';
+
+  const variantStyles = {
+    primary:
+      'bg-[var(--Colors-Primary-Button-fill-Default)] text-[var(--Colors-Primary-Text-\\&-icon-Default)] border-[var(--Colors-Primary-Button-stroke-Default)] hover:bg-[var(--Colors-Primary-Button-fill-Hover)] active:bg-[var(--Colors-Primary-Button-fill-Pressed)]',
+    secondary:
+      'bg-[var(--Colors-Secondary-Button-fill-Default)] text-[var(--Colors-Secondary-Text-Label)] border-[var(--Colors-Secondary-Button-stroke-Default)]',
+    error:
+      'bg-[var(--Colors-Error-Button-fill-Default)] text-[var(--Colors-Error-Button-stroke-Default)] border-[var(--Colors-Error-Button-stroke-Default)]',
+    success:
+      'bg-[var(--Colors-Success-Button-fill-Default)] text-[var(--Colors-Success-Button-stroke-Default)] border-[var(--Colors-Success-Button-stroke-Default)]',
+  };
+
+  const sizeStyles = {
+    sm: 'h-8 px-[var(--Spacing-\\&-Corner-radius-xs)] text-xs',
+    md: 'h-10 px-[var(--Spacing-\\&-Corner-radius-s)] text-sm',
+    lg: 'h-12 px-[var(--Spacing-\\&-Corner-radius-l)] text-base',
+  };
 
   return (
     <button
-      disabled={isInactive}
-      className={`inline-flex items-center justify-center font-bold tracking-wide transition-all duration-150 border focus:outline-none ${fontClass} ${sizeClass} ${brandStyle} ${widthClass} ${className}`}
+      style={{ fontFamily: 'var(--Typography-Font-Primary)' }}
+      className={`${baseStyles} ${variantStyles[variant]} ${sizeStyles[size]} ${className}`}
+      disabled={disabled}
       {...props}
     >
-      {leftIcon && <span className="inline-flex shrink-0">{leftIcon}</span>}
-      {children && <span>{children}</span>}
-      {rightIcon && <span className="inline-flex shrink-0">{rightIcon}</span>}
+      {children}
     </button>
   );
 };
-
-export default Button;

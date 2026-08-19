@@ -75,28 +75,24 @@ export const AllTypes: Story = {
 };
 
 export const FigmaStatesGrid: Story = {
-  render: (args) => (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-      <div style={{ display: 'flex', gap: '16px', alignItems: 'center' }}>
-        <span style={{ width: '80px', fontSize: '12px', fontWeight: 600 }}>Default:</span>
-        <Button {...args} label="Default" />
+  render: (args) => {
+    const states = [
+      { title: 'Default', props: {} },
+      { title: 'Hover', props: { isHovered: true } },
+      { title: 'Focused', props: { isFocused: true } },
+      { title: 'Pressed', props: { isPressed: true } },
+      { title: 'Inactive', props: { disabled: true } },
+    ];
+
+    return (
+      <div style={{ display: 'flex', gap: '24px', alignItems: 'flex-start', flexWrap: 'wrap' }}>
+        {states.map((st) => (
+          <div key={st.title} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+            <span style={{ fontSize: '12px', fontWeight: 600, color: '#888' }}>{st.title}</span>
+            <Button {...args} {...st.props} style={{ minWidth: '120px' }} />
+          </div>
+        ))}
       </div>
-      <div style={{ display: 'flex', gap: '16px', alignItems: 'center' }}>
-        <span style={{ width: '80px', fontSize: '12px', fontWeight: 600 }}>Hover:</span>
-        <Button {...args} label="Hover State" isHovered />
-      </div>
-      <div style={{ display: 'flex', gap: '16px', alignItems: 'center' }}>
-        <span style={{ width: '80px', fontSize: '12px', fontWeight: 600 }}>Focused:</span>
-        <Button {...args} label="Focused State" isFocused />
-      </div>
-      <div style={{ display: 'flex', gap: '16px', alignItems: 'center' }}>
-        <span style={{ width: '80px', fontSize: '12px', fontWeight: 600 }}>Pressed:</span>
-        <Button {...args} label="Pressed State" isPressed />
-      </div>
-      <div style={{ display: 'flex', gap: '16px', alignItems: 'center' }}>
-        <span style={{ width: '80px', fontSize: '12px', fontWeight: 600 }}>Inactive:</span>
-        <Button {...args} label="Inactive State" disabled />
-      </div>
-    </div>
-  ),
+    );
+  },
 };

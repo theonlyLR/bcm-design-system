@@ -5,89 +5,102 @@
   --Corner-radius-8px: 8px;
 }
 
-/* Brand Theme Variables */
+/* -------------------------------------------------------------------------- */
+/* BRAND COLOR TOKENS                                                         */
+/* -------------------------------------------------------------------------- */
+
+/* TechCabal Theme */
 :root, [data-theme="techcabal"], [data-theme="tc"] {
-  --Colors-Primary-Button-fill-Default: #F23204;
-  --Colors-Primary-Button-fill-Hover: #FB4E22;
-  --Colors-Primary-Button-fill-Pressed: #501101;
-  --Colors-Secondary-Button-fill-Default: #FFEFEB;
-  --Colors-Secondary-Button-stroke-Default: #FB4E22;
-  --Colors-Secondary-Text-Label: #F23204;
-  --Colors-Primary-Text-and-icon-Default: #FFFFFF;
-  --Colors-Error-Button-fill-Default: #FFE1DA;
-  --Colors-Error-Button-stroke-Default: #F23204;
-  --Colors-Error-Text-Default: #F23204;
-  --Colors-Success-Button-fill-Default: #DBEECD;
-  --Colors-Success-Button-stroke-Default: #548C2F;
-  --Colors-Success-Text-Default: #548C2F;
   --Typography-Font-Primary: 'Open Sans', sans-serif;
+  
+  /* Primary Variant */
+  --Primary-Fill-Default: #F23204;
+  --Primary-Fill-Hover: #FB4E22;
+  --Primary-Text-Default: #FFFFFF;
+  --Primary-Focus-Stroke: #501101;
+
+  /* Transparent Variant */
+  --Transparent-Text-Default: #F23204;
+  --Transparent-Fill-Hover: #FFEFEB;
+
+  /* Outline Variant */
+  --Outline-Text-Default: #F23204;
+  --Outline-Stroke-Default: #F23204;
+  --Outline-Fill-Hover: #FFEFEB;
+
+  /* Secondary Variant (Row 4 Gray Trigger) */
+  --Secondary-Fill-Default: #ECECEC;
+  --Secondary-Fill-Hover: #D8D8D8;
+  --Secondary-Text-Default: #181818;
+  --Secondary-Stroke-Default: #D1D1D1;
+
+  /* Universal Inactive / Disabled Tokens */
+  --Inactive-Fill: #F5F5F5;
+  --Inactive-Text: #B5B5B5;
+  --Inactive-Stroke: #E0E0E0;
 }
 
+/* Zikoko Theme */
 [data-theme="zikoko"], [data-theme="zkk"] {
-  --Colors-Primary-Button-fill-Default: #9A2BC2;
-  --Colors-Primary-Button-fill-Hover: #AB6BEB;
-  --Colors-Primary-Button-fill-Pressed: #570095;
-  --Colors-Secondary-Button-fill-Default: #EDEBFF;
-  --Colors-Secondary-Button-stroke-Default: #AB6BEB;
-  --Colors-Secondary-Text-Label: #9A2BC2;
-  --Colors-Primary-Text-and-icon-Default: #FFFFFF;
-  --Colors-Error-Button-fill-Default: #FFDBDD;
-  --Colors-Error-Button-stroke-Default: #FF2E38;
-  --Colors-Error-Text-Default: #FF2E38;
-  --Colors-Success-Button-fill-Default: #D2FEEE;
-  --Colors-Success-Button-stroke-Default: #03B579;
-  --Colors-Success-Text-Default: #03B579;
   --Typography-Font-Primary: 'Cabin', sans-serif;
+  --Primary-Fill-Default: #9A2BC2;
+  --Primary-Fill-Hover: #AB6BEB;
+  --Primary-Text-Default: #FFFFFF;
+  --Primary-Focus-Stroke: #570095;
+
+  --Transparent-Text-Default: #9A2BC2;
+  --Transparent-Fill-Hover: #EDEBFF;
+
+  --Outline-Text-Default: #9A2BC2;
+  --Outline-Stroke-Default: #AB6BEB;
+  --Outline-Fill-Hover: #EDEBFF;
+
+  --Secondary-Fill-Default: #ECECEC;
+  --Secondary-Fill-Hover: #D8D8D8;
+  --Secondary-Text-Default: #181818;
+  --Secondary-Stroke-Default: #D1D1D1;
+
+  --Inactive-Fill: #F5F5F5;
+  --Inactive-Text: #B5B5B5;
+  --Inactive-Stroke: #E0E0E0;
 }
 
-[data-theme="tci"] {
-  --Colors-Primary-Button-fill-Default: #181818;
-  --Colors-Primary-Button-fill-Hover: #292929;
-  --Colors-Primary-Button-fill-Pressed: #000000;
-  --Colors-Secondary-Button-fill-Default: #ECECEC;
-  --Colors-Secondary-Button-stroke-Default: #353535;
-  --Colors-Secondary-Text-Label: #373736;
-  --Colors-Primary-Text-and-icon-Default: #FFFFFF;
-  --Colors-Error-Button-fill-Default: #FDD8CE;
-  --Colors-Error-Button-stroke-Default: #F00000;
-  --Colors-Error-Text-Default: #F00000;
-  --Colors-Success-Button-fill-Default: #DFF3D8;
-  --Colors-Success-Button-stroke-Default: #387623;
-  --Colors-Success-Text-Default: #387623;
+/* TCi & BCM Themes */
+[data-theme="tci"], [data-theme="bcm"] {
   --Typography-Font-Primary: 'IBM Plex Sans', sans-serif;
-}
+  --Primary-Fill-Default: #181818;
+  --Primary-Fill-Hover: #292929;
+  --Primary-Text-Default: #FFFFFF;
+  --Primary-Focus-Stroke: #000000;
 
-[data-theme="bcm"] {
-  --Colors-Primary-Button-fill-Default: #181818;
-  --Colors-Primary-Button-fill-Hover: #292929;
-  --Colors-Primary-Button-fill-Pressed: #000000;
-  --Colors-Secondary-Button-fill-Default: #ECECEC;
-  --Colors-Secondary-Button-stroke-Default: #353535;
-  --Colors-Secondary-Text-Label: #373736;
-  --Colors-Primary-Text-and-icon-Default: #FFFFFF;
-  --Colors-Error-Button-fill-Default: #FDD8CE;
-  --Colors-Error-Button-stroke-Default: #F00000;
-  --Colors-Error-Text-Default: #F00000;
-  --Colors-Success-Button-fill-Default: #DFF3D8;
-  --Colors-Success-Button-stroke-Default: #387623;
-  --Colors-Success-Text-Default: #387623;
-  --Typography-Font-Primary: 'Urbanist', sans-serif;
+  --Transparent-Text-Default: #181818;
+  --Transparent-Fill-Hover: #F5F5F5;
+
+  --Outline-Text-Default: #181818;
+  --Outline-Stroke-Default: #353535;
+  --Outline-Fill-Hover: #F5F5F5;
+
+  --Secondary-Fill-Default: #ECECEC;
+  --Secondary-Fill-Hover: #D8D8D8;
+  --Secondary-Text-Default: #181818;
+  --Secondary-Stroke-Default: #D1D1D1;
+
+  --Inactive-Fill: #F5F5F5;
+  --Inactive-Text: #B5B5B5;
+  --Inactive-Stroke: #E0E0E0;
 }
 
 /* -------------------------------------------------------------------------- */
-/* INTERACTIVE COMPONENT CLASSES                                              */
+/* COMPONENT BASE & INTERACTION RULES                                          */
 /* -------------------------------------------------------------------------- */
 
 .ds-button {
   display: inline-flex;
-  height: 48px;
-  padding: 0 16px;
   justify-content: center;
   align-items: center;
   gap: 8px;
   border-radius: var(--Corner-radius-8px, 8px);
   font-family: var(--Typography-Font-Primary, sans-serif);
-  font-size: 14px;
   font-weight: 600;
   border-width: 1px;
   border-style: solid;
@@ -97,106 +110,97 @@
   outline: none;
 }
 
-/* Disabled State */
-.ds-button:disabled,
-.ds-button[data-disabled="true"] {
-  cursor: not-allowed;
-  opacity: 0.5;
-  pointer-events: none;
-}
-
-/* Focused State */
-.ds-button:focus-visible,
-.ds-button[data-focused="true"] {
-  box-shadow: 0 0 0 3px rgba(242, 50, 4, 0.35);
-}
-
-/* Primary Variant Interactivity */
+/* Row 1: Primary Button */
 .ds-button-primary {
-  background-color: var(--Colors-Primary-Button-fill-Default);
-  color: var(--Colors-Primary-Text-and-icon-Default);
+  background-color: var(--Primary-Fill-Default);
+  color: var(--Primary-Text-Default);
   border-color: transparent;
 }
 .ds-button-primary:hover:not(:disabled),
 .ds-button-primary[data-hovered="true"] {
-  background-color: var(--Colors-Primary-Button-fill-Hover);
+  background-color: var(--Primary-Fill-Hover);
 }
-.ds-button-primary:active:not(:disabled),
-.ds-button-primary[data-pressed="true"] {
-  background-color: var(--Colors-Primary-Button-fill-Pressed);
+.ds-button-primary:focus-visible,
+.ds-button-primary[data-focused="true"] {
+  box-shadow: 0 0 0 2px #FFFFFF, 0 0 0 4px var(--Primary-Focus-Stroke);
 }
-
-/* Secondary Variant Interactivity */
-.ds-button-secondary {
-  background-color: var(--Colors-Secondary-Button-fill-Default);
-  color: var(--Colors-Secondary-Text-Label);
-  border-color: var(--Colors-Secondary-Button-stroke-Default);
-}
-.ds-button-secondary:hover:not(:disabled),
-.ds-button-secondary[data-hovered="true"] {
-  filter: brightness(0.96);
-}
-.ds-button-secondary:active:not(:disabled),
-.ds-button-secondary[data-pressed="true"] {
-  filter: brightness(0.90);
+.ds-button-primary:disabled,
+.ds-button-primary[data-disabled="true"] {
+  background-color: var(--Inactive-Fill);
+  color: var(--Inactive-Text);
+  border-color: transparent;
+  cursor: not-allowed;
+  pointer-events: none;
 }
 
-/* Outline Variant Interactivity */
-.ds-button-outline {
-  background-color: transparent;
-  color: var(--Colors-Secondary-Text-Label);
-  border-color: var(--Colors-Secondary-Button-stroke-Default);
-}
-.ds-button-outline:hover:not(:disabled),
-.ds-button-outline[data-hovered="true"] {
-  background-color: var(--Colors-Secondary-Button-fill-Default);
-}
-.ds-button-outline:active:not(:disabled),
-.ds-button-outline[data-pressed="true"] {
-  filter: brightness(0.95);
-}
-
-/* Transparent Variant Interactivity */
+/* Row 2: Transparent Button */
 .ds-button-transparent {
   background-color: transparent;
-  color: var(--Colors-Secondary-Text-Label);
+  color: var(--Transparent-Text-Default);
   border-color: transparent;
 }
 .ds-button-transparent:hover:not(:disabled),
 .ds-button-transparent[data-hovered="true"] {
-  background-color: var(--Colors-Secondary-Button-fill-Default);
+  background-color: var(--Transparent-Fill-Hover);
 }
-.ds-button-transparent:active:not(:disabled),
-.ds-button-transparent[data-pressed="true"] {
-  filter: brightness(0.95);
+.ds-button-transparent:focus-visible,
+.ds-button-transparent[data-focused="true"] {
+  background-color: var(--Transparent-Fill-Hover);
+  border-color: var(--Transparent-Text-Default);
 }
-
-/* Error Variant Interactivity */
-.ds-button-error {
-  background-color: var(--Colors-Error-Button-fill-Default);
-  color: var(--Colors-Error-Text-Default);
-  border-color: var(--Colors-Error-Button-stroke-Default);
-}
-.ds-button-error:hover:not(:disabled),
-.ds-button-error[data-hovered="true"] {
-  filter: brightness(0.96);
-}
-.ds-button-error:active:not(:disabled),
-.ds-button-error[data-pressed="true"] {
-  filter: brightness(0.90);
+.ds-button-transparent:disabled,
+.ds-button-transparent[data-disabled="true"] {
+  background-color: transparent;
+  color: var(--Inactive-Text);
+  border-color: transparent;
+  cursor: not-allowed;
+  pointer-events: none;
 }
 
-/* Success Variant Interactivity */
-.ds-button-success {
-  background-color: var(--Colors-Success-Button-fill-Default);
-  color: var(--Colors-Success-Text-Default);
-  border-color: var(--Colors-Success-Button-stroke-Default);
+/* Row 3: Outline Button */
+.ds-button-outline {
+  background-color: transparent;
+  color: var(--Outline-Text-Default);
+  border-color: var(--Outline-Stroke-Default);
 }
-.ds-button-success:hover:not(:disabled),
-.ds-button-success[data-hovered="true"] {
-  filter: brightness(0.96);
+.ds-button-outline:hover:not(:disabled),
+.ds-button-outline[data-hovered="true"] {
+  background-color: var(--Outline-Fill-Hover);
 }
-.ds-button-success:active:not(:disabled),
-.ds-button-success[data-pressed="true"] {
-  filter: brightness(0.90);
+.ds-button-outline:focus-visible,
+.ds-button-outline[data-focused="true"] {
+  background-color: var(--Outline-Fill-Hover);
+  border-width: 2px;
+}
+.ds-button-outline:disabled,
+.ds-button-outline[data-disabled="true"] {
+  background-color: transparent;
+  color: var(--Inactive-Text);
+  border-color: var(--Inactive-Stroke);
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Row 4: Secondary Button */
+.ds-button-secondary {
+  background-color: var(--Secondary-Fill-Default);
+  color: var(--Secondary-Text-Default);
+  border-color: var(--Secondary-Stroke-Default);
+}
+.ds-button-secondary:hover:not(:disabled),
+.ds-button-secondary[data-hovered="true"] {
+  background-color: var(--Secondary-Fill-Hover);
+}
+.ds-button-secondary:focus-visible,
+.ds-button-secondary[data-focused="true"] {
+  border-color: var(--Secondary-Text-Default);
+  border-width: 2px;
+}
+.ds-button-secondary:disabled,
+.ds-button-secondary[data-disabled="true"] {
+  background-color: var(--Inactive-Fill);
+  color: var(--Inactive-Text);
+  border-color: var(--Inactive-Stroke);
+  cursor: not-allowed;
+  pointer-events: none;
 }

@@ -70,6 +70,9 @@ The **Button** component triggers user actions across all BCM brands (**TechCaba
       control: 'boolean',
       table: { category: 'States' },
     },
+    // Hide standard HTML / internal props from Controls table
+    className: { table: { disable: true } },
+    style: { table: { disable: true } },
     variant: { table: { disable: true } },
     size: { table: { disable: true } },
     rightIcon: { table: { disable: true } },

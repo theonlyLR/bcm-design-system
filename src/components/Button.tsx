@@ -24,42 +24,96 @@ export const Button = ({
   disabled = false,
   children,
   className = '',
+  style,
   ...props
 }: ButtonProps) => {
-  /* Exact Figma Layout & Style CSS:
-     display: inline-flex; height: 48px; padding: 20px 16px;
-     justify-content: center; align-items: center; gap: 8px;
-     border-radius: var(--Corner-radius-8px, 8px);
-     background: var(--Colors-Primary-Button-fill-Default, #F23204);
-  */
-  const baseStyles =
-    'inline-flex h-[48px] px-[16px] py-[20px] justify-center items-center gap-[8px] font-brand rounded-[var(--Corner-radius-8px,8px)] font-medium border border-transparent transition-all cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none disabled:bg-[var(--Colors-Primary-Button-fill-Inactive,#ECECEC)]';
+  // Get variant background, text color, and border
+  const getVariantStyles = (): React.CSSProperties => {
+    switch (typeVariant) {
+      case 'transparent':
+        return {
+          backgroundColor: 'transparent',
+          color: 'var(--Colors-Secondary-Text-Label, #F23204)',
+          borderColor: 'transparent',
+        };
+      case 'outline':
+        return {
+          backgroundColor: 'transparent',
+          color: 'var(--Colors-Secondary-Text-Label, #F23204)',
+          borderColor: 'var(--Colors-Secondary-Button-stroke-Default, #FB4E22)',
+        };
+      case 'secondary':
+        return {
+          backgroundColor: 'var(--Colors-Secondary-Button-fill-Default, #FFEFEB)',
+          color: 'var(--Colors-Secondary-Text-Label, #F23204)',
+          borderColor: 'var(--Colors-Secondary-Button-stroke-Default, #FB4E22)',
+        };
+      case 'primary':
+      default:
+        return {
+          backgroundColor: 'var(--Colors-Primary-Button-fill-Default, #F23204)',
+          color: 'var(--Colors-Primary-Text-and-icon-Default, #FFFFFF)',
+          borderColor: 'transparent',
+        };
+    }
+  };
 
-  const variantStyles = {
-    primary:
-      'bg-[var(--Colors-Primary-Button-fill-Default,#F23204)] text-[var(--Colors-Primary-Text-\\&-icon-Default,#FFFFFF)] border-[var(--Colors-Primary-Button-stroke-Default,transparent)] hover:bg-[var(--Colors-Primary-Button-fill-Hover,#FB4E22)] active:bg-[var(--Colors-Primary-Button-fill-Pressed,#501101)]',
-    transparent:
-      'bg-transparent text-[var(--Colors-Secondary-Text-Label,#F23204)] border-transparent hover:bg-[var(--Colors-Secondary-Button-fill-Default,#FFEFEB)]',
-    outline:
-      'bg-transparent text-[var(--Colors-Secondary-Text-Label,#F23204)] border-[var(--Colors-Secondary-Button-stroke-Default,#FB4E22)] hover:bg-[var(--Colors-Secondary-Button-fill-Default,#FFEFEB)]',
-    secondary:
-      'bg-[var(--Colors-Secondary-Button-fill-Default,#FFEFEB)] text-[var(--Colors-Secondary-Text-Label,#F23204)] border-[var(--Colors-Secondary-Button-stroke-Default,#FB4E22)]',
+  const combinedStyles: React.CSSProperties = {
+    display: 'inline-flex',
+    height: '48px',
+    padding: '0 16px',
+    justifyContent: 'center',
+    alignItems: 'center',
+    gap: '8px',
+    borderRadius: 'var(--Corner-radius-8px, 8px)',
+    fontFamily: 'var(--Typography-Font-Primary, system-ui, sans-serif)',
+    fontSize: '14px',
+    fontWeight: 600,
+    borderWidth: '1px',
+    borderStyle: 'solid',
+    cursor: disabled || isLoading ? 'not-allowed' : 'pointer',
+    opacity: disabled ? 0.5 : 1,
+    transition: 'all 0.15s ease-in-out',
+    boxSizing: 'border-box',
+    ...getVariantStyles(),
+    ...style,
   };
 
   const DefaultRightArrow = () => (
-    <svg className="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+    <svg
+      width="16"
+      height="16"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      style={{ width: '16px', height: '16px', flexShrink: 0 }}
+    >
+      <path d="M5 12h14M12 5l7 7-7 7" />
     </svg>
   );
 
   return (
     <button
-      className={`${baseStyles} ${variantStyles[typeVariant]} ${className}`}
+      style={combinedStyles}
       disabled={disabled || isLoading}
+      className={className}
       {...props}
     >
       {isLoading ? (
-        <span className="animate-spin rounded-full h-4 w-4 border-2 border-current border-t-transparent" />
+        <span
+          style={{
+            width: '16px',
+            height: '16px',
+            border: '2px solid currentColor',
+            borderTopColor: 'transparent',
+            borderRadius: '50%',
+            display: 'inline-block',
+            animation: 'spin 1s linear infinite',
+          }}
+        />
       ) : (
         <>
           <span>{children || label}</span>

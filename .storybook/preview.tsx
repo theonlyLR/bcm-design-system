@@ -1,21 +1,35 @@
-import type { Preview } from '@storybook/react-vite'
+import type { Preview } from '@storybook/react';
+import React from 'react';
+import '../src/index.css';
 
 const preview: Preview = {
-  parameters: {
-    controls: {
-      matchers: {
-       color: /(background|color)$/i,
-       date: /Date$/i,
+  globalTypes: {
+    theme: {
+      description: 'Global Brand Theme',
+      defaultValue: 'techcabal',
+      toolbar: {
+        title: 'Brand Theme',
+        icon: 'paintbrush',
+        items: [
+          { value: 'techcabal', title: 'TechCabal' },
+          { value: 'zikoko', title: 'Zikoko' },
+          { value: 'tci', title: 'TCi' },
+          { value: 'bcm', title: 'BCM' },
+        ],
+        dynamicTitle: true,
       },
     },
-
-    a11y: {
-      // 'todo' - show a11y violations in the test UI only
-      // 'error' - fail CI on a11y violations
-      // 'off' - skip a11y checks entirely
-      test: 'todo'
-    }
   },
+  decorators: [
+    (Story, context) => {
+      const theme = context.globals.theme || 'techcabal';
+      return (
+        <div data-theme={theme} style={{ padding: '2rem', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+          <Story />
+        </div>
+      );
+    },
+  ],
 };
 
 export default preview;

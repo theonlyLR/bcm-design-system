@@ -26,6 +26,7 @@
     "@storybook/addon-mcp": "latest",
     "@storybook/addon-vitest": "^10.5.9",
     "@storybook/react-vite": "^10.5.9",
+    "@tailwindcss/postcss": "^4.3.3",
     "@vitest/browser-playwright": "latest",
     "@vitest/coverage-v8": "latest",
     "autoprefixer": "^10.5.4",

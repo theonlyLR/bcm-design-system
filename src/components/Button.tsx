@@ -28,7 +28,6 @@ export const Button = ({
   isFocused = false,
   isPressed = false,
   className = '',
-  style,
   ...props
 }: ButtonProps) => {
   const normalizeBrand = (b?: string) => {
@@ -42,74 +41,6 @@ export const Button = ({
   };
 
   const activeTheme = normalizeBrand(brand);
-
-  const getVariantStyles = (): React.CSSProperties => {
-    switch (typeVariant) {
-      case 'error':
-        return {
-          backgroundColor: 'var(--Colors-Error-Button-fill-Default)',
-          color: 'var(--Colors-Error-Text-Default)',
-          borderColor: 'var(--Colors-Error-Button-stroke-Default)',
-        };
-      case 'success':
-        return {
-          backgroundColor: 'var(--Colors-Success-Button-fill-Default)',
-          color: 'var(--Colors-Success-Text-Default)',
-          borderColor: 'var(--Colors-Success-Button-stroke-Default)',
-        };
-      case 'transparent':
-        return {
-          backgroundColor: isPressed ? 'var(--Colors-Secondary-Button-fill-Default)' : 'transparent',
-          color: 'var(--Colors-Secondary-Text-Label)',
-          borderColor: 'transparent',
-        };
-      case 'outline':
-        return {
-          backgroundColor: isPressed ? 'var(--Colors-Secondary-Button-fill-Default)' : 'transparent',
-          color: 'var(--Colors-Secondary-Text-Label)',
-          borderColor: 'var(--Colors-Secondary-Button-stroke-Default)',
-        };
-      case 'secondary':
-        return {
-          backgroundColor: 'var(--Colors-Secondary-Button-fill-Default)',
-          color: 'var(--Colors-Secondary-Text-Label)',
-          borderColor: 'var(--Colors-Secondary-Button-stroke-Default)',
-        };
-      case 'primary':
-      default:
-        let bg = 'var(--Colors-Primary-Button-fill-Default)';
-        if (isPressed) bg = 'var(--Colors-Primary-Button-fill-Pressed)';
-        else if (isHovered) bg = 'var(--Colors-Primary-Button-fill-Hover)';
-
-        return {
-          backgroundColor: bg,
-          color: 'var(--Colors-Primary-Text-and-icon-Default)',
-          borderColor: 'transparent',
-        };
-    }
-  };
-
-  const combinedStyles: React.CSSProperties = {
-    display: 'inline-flex',
-    height: '48px',
-    padding: '0 16px',
-    justifyContent: 'center',
-    alignItems: 'center',
-    gap: '8px',
-    borderRadius: 'var(--Corner-radius-8px, 8px)',
-    fontFamily: 'var(--Typography-Font-Primary, sans-serif)',
-    fontSize: '14px',
-    fontWeight: 600,
-    borderWidth: '1px',
-    borderStyle: 'solid',
-    cursor: disabled || isLoading ? 'not-allowed' : 'pointer',
-    opacity: disabled ? 0.5 : 1,
-    boxShadow: isFocused ? '0 0 0 3px rgba(242, 50, 4, 0.35)' : 'none',
-    transition: 'all 0.15s ease-in-out',
-    boxSizing: 'border-box',
-    ...getVariantStyles(),
-    ...style,
-  };
 
   const ArrowIcon = ({ direction }: { direction: 'left' | 'right' }) => (
     <svg
@@ -134,9 +65,12 @@ export const Button = ({
   return (
     <button
       data-theme={activeTheme}
-      style={combinedStyles}
+      data-hovered={isHovered ? 'true' : undefined}
+      data-focused={isFocused ? 'true' : undefined}
+      data-pressed={isPressed ? 'true' : undefined}
+      data-disabled={disabled ? 'true' : undefined}
+      className={`ds-button ds-button-${typeVariant} ${className}`}
       disabled={disabled || isLoading}
-      className={className}
       {...props}
     >
       {isLoading ? (

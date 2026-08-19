@@ -5,7 +5,7 @@
   --Corner-radius-8px: 8px;
 }
 
-/* Brand 1: TechCabal */
+/* Brand Theme Variables */
 :root, [data-theme="techcabal"], [data-theme="tc"] {
   --Colors-Primary-Button-fill-Default: #F23204;
   --Colors-Primary-Button-fill-Hover: #FB4E22;
@@ -23,7 +23,6 @@
   --Typography-Font-Primary: 'Open Sans', sans-serif;
 }
 
-/* Brand 2: Zikoko */
 [data-theme="zikoko"], [data-theme="zkk"] {
   --Colors-Primary-Button-fill-Default: #9A2BC2;
   --Colors-Primary-Button-fill-Hover: #AB6BEB;
@@ -41,7 +40,6 @@
   --Typography-Font-Primary: 'Cabin', sans-serif;
 }
 
-/* Brand 3: TCi */
 [data-theme="tci"] {
   --Colors-Primary-Button-fill-Default: #181818;
   --Colors-Primary-Button-fill-Hover: #292929;
@@ -59,7 +57,6 @@
   --Typography-Font-Primary: 'IBM Plex Sans', sans-serif;
 }
 
-/* Brand 4: BCM */
 [data-theme="bcm"] {
   --Colors-Primary-Button-fill-Default: #181818;
   --Colors-Primary-Button-fill-Hover: #292929;
@@ -75,4 +72,131 @@
   --Colors-Success-Button-stroke-Default: #387623;
   --Colors-Success-Text-Default: #387623;
   --Typography-Font-Primary: 'Urbanist', sans-serif;
+}
+
+/* -------------------------------------------------------------------------- */
+/* INTERACTIVE COMPONENT CLASSES                                              */
+/* -------------------------------------------------------------------------- */
+
+.ds-button {
+  display: inline-flex;
+  height: 48px;
+  padding: 0 16px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  border-radius: var(--Corner-radius-8px, 8px);
+  font-family: var(--Typography-Font-Primary, sans-serif);
+  font-size: 14px;
+  font-weight: 600;
+  border-width: 1px;
+  border-style: solid;
+  cursor: pointer;
+  transition: all 0.15s ease-in-out;
+  box-sizing: border-box;
+  outline: none;
+}
+
+/* Disabled State */
+.ds-button:disabled,
+.ds-button[data-disabled="true"] {
+  cursor: not-allowed;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+/* Focused State */
+.ds-button:focus-visible,
+.ds-button[data-focused="true"] {
+  box-shadow: 0 0 0 3px rgba(242, 50, 4, 0.35);
+}
+
+/* Primary Variant Interactivity */
+.ds-button-primary {
+  background-color: var(--Colors-Primary-Button-fill-Default);
+  color: var(--Colors-Primary-Text-and-icon-Default);
+  border-color: transparent;
+}
+.ds-button-primary:hover:not(:disabled),
+.ds-button-primary[data-hovered="true"] {
+  background-color: var(--Colors-Primary-Button-fill-Hover);
+}
+.ds-button-primary:active:not(:disabled),
+.ds-button-primary[data-pressed="true"] {
+  background-color: var(--Colors-Primary-Button-fill-Pressed);
+}
+
+/* Secondary Variant Interactivity */
+.ds-button-secondary {
+  background-color: var(--Colors-Secondary-Button-fill-Default);
+  color: var(--Colors-Secondary-Text-Label);
+  border-color: var(--Colors-Secondary-Button-stroke-Default);
+}
+.ds-button-secondary:hover:not(:disabled),
+.ds-button-secondary[data-hovered="true"] {
+  filter: brightness(0.96);
+}
+.ds-button-secondary:active:not(:disabled),
+.ds-button-secondary[data-pressed="true"] {
+  filter: brightness(0.90);
+}
+
+/* Outline Variant Interactivity */
+.ds-button-outline {
+  background-color: transparent;
+  color: var(--Colors-Secondary-Text-Label);
+  border-color: var(--Colors-Secondary-Button-stroke-Default);
+}
+.ds-button-outline:hover:not(:disabled),
+.ds-button-outline[data-hovered="true"] {
+  background-color: var(--Colors-Secondary-Button-fill-Default);
+}
+.ds-button-outline:active:not(:disabled),
+.ds-button-outline[data-pressed="true"] {
+  filter: brightness(0.95);
+}
+
+/* Transparent Variant Interactivity */
+.ds-button-transparent {
+  background-color: transparent;
+  color: var(--Colors-Secondary-Text-Label);
+  border-color: transparent;
+}
+.ds-button-transparent:hover:not(:disabled),
+.ds-button-transparent[data-hovered="true"] {
+  background-color: var(--Colors-Secondary-Button-fill-Default);
+}
+.ds-button-transparent:active:not(:disabled),
+.ds-button-transparent[data-pressed="true"] {
+  filter: brightness(0.95);
+}
+
+/* Error Variant Interactivity */
+.ds-button-error {
+  background-color: var(--Colors-Error-Button-fill-Default);
+  color: var(--Colors-Error-Text-Default);
+  border-color: var(--Colors-Error-Button-stroke-Default);
+}
+.ds-button-error:hover:not(:disabled),
+.ds-button-error[data-hovered="true"] {
+  filter: brightness(0.96);
+}
+.ds-button-error:active:not(:disabled),
+.ds-button-error[data-pressed="true"] {
+  filter: brightness(0.90);
+}
+
+/* Success Variant Interactivity */
+.ds-button-success {
+  background-color: var(--Colors-Success-Button-fill-Default);
+  color: var(--Colors-Success-Text-Default);
+  border-color: var(--Colors-Success-Button-stroke-Default);
+}
+.ds-button-success:hover:not(:disabled),
+.ds-button-success[data-hovered="true"] {
+  filter: brightness(0.96);
+}
+.ds-button-success:active:not(:disabled),
+.ds-button-success[data-pressed="true"] {
+  filter: brightness(0.90);
 }

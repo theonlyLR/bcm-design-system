@@ -14,6 +14,12 @@
   --Colors-Secondary-Button-stroke-Default: #FB4E22;
   --Colors-Secondary-Text-Label: #F23204;
   --Colors-Primary-Text-and-icon-Default: #FFFFFF;
+  --Colors-Error-Button-fill-Default: #FFE1DA;
+  --Colors-Error-Button-stroke-Default: #F23204;
+  --Colors-Error-Text-Default: #F23204;
+  --Colors-Success-Button-fill-Default: #DBEECD;
+  --Colors-Success-Button-stroke-Default: #548C2F;
+  --Colors-Success-Text-Default: #548C2F;
   --Typography-Font-Primary: 'Open Sans', sans-serif;
 }
 
@@ -26,6 +32,12 @@
   --Colors-Secondary-Button-stroke-Default: #AB6BEB;
   --Colors-Secondary-Text-Label: #9A2BC2;
   --Colors-Primary-Text-and-icon-Default: #FFFFFF;
+  --Colors-Error-Button-fill-Default: #FFDBDD;
+  --Colors-Error-Button-stroke-Default: #FF2E38;
+  --Colors-Error-Text-Default: #FF2E38;
+  --Colors-Success-Button-fill-Default: #D2FEEE;
+  --Colors-Success-Button-stroke-Default: #03B579;
+  --Colors-Success-Text-Default: #03B579;
   --Typography-Font-Primary: 'Cabin', sans-serif;
 }
 
@@ -38,6 +50,12 @@
   --Colors-Secondary-Button-stroke-Default: #353535;
   --Colors-Secondary-Text-Label: #373736;
   --Colors-Primary-Text-and-icon-Default: #FFFFFF;
+  --Colors-Error-Button-fill-Default: #FDD8CE;
+  --Colors-Error-Button-stroke-Default: #F00000;
+  --Colors-Error-Text-Default: #F00000;
+  --Colors-Success-Button-fill-Default: #DFF3D8;
+  --Colors-Success-Button-stroke-Default: #387623;
+  --Colors-Success-Text-Default: #387623;
   --Typography-Font-Primary: 'IBM Plex Sans', sans-serif;
 }
 
@@ -50,5 +68,11 @@
   --Colors-Secondary-Button-stroke-Default: #353535;
   --Colors-Secondary-Text-Label: #373736;
   --Colors-Primary-Text-and-icon-Default: #FFFFFF;
+  --Colors-Error-Button-fill-Default: #FDD8CE;
+  --Colors-Error-Button-stroke-Default: #F00000;
+  --Colors-Error-Text-Default: #F00000;
+  --Colors-Success-Button-fill-Default: #DFF3D8;
+  --Colors-Success-Button-stroke-Default: #387623;
+  --Colors-Success-Text-Default: #387623;
   --Typography-Font-Primary: 'Urbanist', sans-serif;
 }

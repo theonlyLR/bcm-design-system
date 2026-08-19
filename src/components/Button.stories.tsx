@@ -11,44 +11,39 @@ const meta: Meta<typeof Button> = {
       name: 'Brand',
       control: 'select',
       options: ['TechCabal', 'Zikoko', 'TCi', 'BCM'],
-      description: 'Select active brand theme',
     },
     typeVariant: {
       name: 'Type',
       control: 'radio',
-      options: ['primary', 'secondary', 'outline', 'transparent'],
-      description: 'Figma Component Type',
+      options: ['primary', 'secondary', 'outline', 'transparent', 'error', 'success'],
     },
     label: {
       name: 'Label',
       control: 'text',
-      description: 'Button text label',
     },
     hasLeftIcon: {
       name: 'Icon Left',
       control: 'boolean',
-      description: 'Toggle left icon',
     },
     hasRightIcon: {
       name: 'Icon Right',
       control: 'boolean',
-      description: 'Toggle right icon',
     },
     isLoading: {
       name: 'Loading State',
       control: 'boolean',
-      description: 'Toggle loading spinner',
     },
     disabled: {
       name: 'Disabled (Inactive)',
       control: 'boolean',
-      description: 'Toggle inactive state',
     },
-    // Hide internal/redundant props from the control table
     variant: { table: { disable: true } },
     size: { table: { disable: true } },
     rightIcon: { table: { disable: true } },
     children: { table: { disable: true } },
+    isHovered: { table: { disable: true } },
+    isFocused: { table: { disable: true } },
+    isPressed: { table: { disable: true } },
   },
   args: {
     brand: 'TechCabal',
@@ -65,3 +60,43 @@ export default meta;
 type Story = StoryObj<typeof Button>;
 
 export const Default: Story = {};
+
+export const AllTypes: Story = {
+  render: (args) => (
+    <div style={{ display: 'flex', gap: '16px', alignItems: 'center', flexWrap: 'wrap' }}>
+      <Button {...args} typeVariant="primary" label="Primary" />
+      <Button {...args} typeVariant="secondary" label="Secondary" />
+      <Button {...args} typeVariant="outline" label="Outline" />
+      <Button {...args} typeVariant="transparent" label="Transparent" />
+      <Button {...args} typeVariant="error" label="Error" />
+      <Button {...args} typeVariant="success" label="Success" />
+    </div>
+  ),
+};
+
+export const FigmaStatesGrid: Story = {
+  render: (args) => (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+      <div style={{ display: 'flex', gap: '16px', alignItems: 'center' }}>
+        <span style={{ width: '80px', fontSize: '12px', fontWeight: 600 }}>Default:</span>
+        <Button {...args} label="Default" />
+      </div>
+      <div style={{ display: 'flex', gap: '16px', alignItems: 'center' }}>
+        <span style={{ width: '80px', fontSize: '12px', fontWeight: 600 }}>Hover:</span>
+        <Button {...args} label="Hover State" isHovered />
+      </div>
+      <div style={{ display: 'flex', gap: '16px', alignItems: 'center' }}>
+        <span style={{ width: '80px', fontSize: '12px', fontWeight: 600 }}>Focused:</span>
+        <Button {...args} label="Focused State" isFocused />
+      </div>
+      <div style={{ display: 'flex', gap: '16px', alignItems: 'center' }}>
+        <span style={{ width: '80px', fontSize: '12px', fontWeight: 600 }}>Pressed:</span>
+        <Button {...args} label="Pressed State" isPressed />
+      </div>
+      <div style={{ display: 'flex', gap: '16px', alignItems: 'center' }}>
+        <span style={{ width: '80px', fontSize: '12px', fontWeight: 600 }}>Inactive:</span>
+        <Button {...args} label="Inactive State" disabled />
+      </div>
+    </div>
+  ),
+};

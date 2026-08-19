@@ -1,6 +1,6 @@
 import React from 'react';
 
-export type ButtonType = 'primary' | 'secondary' | 'outline' | 'transparent';
+export type ButtonType = 'primary' | 'secondary' | 'outline' | 'transparent' | 'error' | 'success';
 export type BrandTheme = 'TechCabal' | 'Zikoko' | 'TCi' | 'BCM' | string;
 
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
@@ -11,6 +11,9 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
   hasRightIcon?: boolean;
   isLoading?: boolean;
   disabled?: boolean;
+  isHovered?: boolean;
+  isFocused?: boolean;
+  isPressed?: boolean;
 }
 
 export const Button = ({
@@ -21,6 +24,9 @@ export const Button = ({
   hasRightIcon = true,
   isLoading = false,
   disabled = false,
+  isHovered = false,
+  isFocused = false,
+  isPressed = false,
   className = '',
   style,
   ...props
@@ -39,15 +45,27 @@ export const Button = ({
 
   const getVariantStyles = (): React.CSSProperties => {
     switch (typeVariant) {
+      case 'error':
+        return {
+          backgroundColor: 'var(--Colors-Error-Button-fill-Default)',
+          color: 'var(--Colors-Error-Text-Default)',
+          borderColor: 'var(--Colors-Error-Button-stroke-Default)',
+        };
+      case 'success':
+        return {
+          backgroundColor: 'var(--Colors-Success-Button-fill-Default)',
+          color: 'var(--Colors-Success-Text-Default)',
+          borderColor: 'var(--Colors-Success-Button-stroke-Default)',
+        };
       case 'transparent':
         return {
-          backgroundColor: 'transparent',
+          backgroundColor: isPressed ? 'var(--Colors-Secondary-Button-fill-Default)' : 'transparent',
           color: 'var(--Colors-Secondary-Text-Label)',
           borderColor: 'transparent',
         };
       case 'outline':
         return {
-          backgroundColor: 'transparent',
+          backgroundColor: isPressed ? 'var(--Colors-Secondary-Button-fill-Default)' : 'transparent',
           color: 'var(--Colors-Secondary-Text-Label)',
           borderColor: 'var(--Colors-Secondary-Button-stroke-Default)',
         };
@@ -59,8 +77,12 @@ export const Button = ({
         };
       case 'primary':
       default:
+        let bg = 'var(--Colors-Primary-Button-fill-Default)';
+        if (isPressed) bg = 'var(--Colors-Primary-Button-fill-Pressed)';
+        else if (isHovered) bg = 'var(--Colors-Primary-Button-fill-Hover)';
+
         return {
-          backgroundColor: 'var(--Colors-Primary-Button-fill-Default)',
+          backgroundColor: bg,
           color: 'var(--Colors-Primary-Text-and-icon-Default)',
           borderColor: 'transparent',
         };
@@ -82,6 +104,7 @@ export const Button = ({
     borderStyle: 'solid',
     cursor: disabled || isLoading ? 'not-allowed' : 'pointer',
     opacity: disabled ? 0.5 : 1,
+    boxShadow: isFocused ? '0 0 0 3px rgba(242, 50, 4, 0.35)' : 'none',
     transition: 'all 0.15s ease-in-out',
     boxSizing: 'border-box',
     ...getVariantStyles(),

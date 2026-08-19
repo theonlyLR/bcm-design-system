@@ -23,7 +23,7 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
 }
 
 export const Button = ({
-  brand = 'TechCabal',
+  brand,
   typeVariant = 'primary',
   size = 'md',
   label = 'Button',
@@ -43,7 +43,7 @@ export const Button = ({
   ...props
 }: ButtonProps) => {
   const normalizeBrand = (b?: string) => {
-    if (!b) return 'techcabal';
+    if (!b) return undefined;
     const lower = b.toLowerCase().trim();
     if (lower.includes('zikoko') || lower === 'zkk') return 'zikoko';
     if (lower.includes('techcabal') || lower === 'tc') return 'techcabal';

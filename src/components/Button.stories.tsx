@@ -6,35 +6,9 @@ const meta: Meta<typeof Button> = {
   title: 'Atomics/Button',
   component: Button,
   tags: ['autodocs'],
-  parameters: {
-    docs: {
-      description: {
-        component: `
-### Overview
-The **Button** component triggers user actions across all BCM brands (**TechCabal**, **Zikoko**, **TCi**, **BCM**). It automatically adjusts color fills, stroke borders, and font typography based on the selected brand theme.
-
----
-
-### Brand Typography & Fills
-* **TechCabal (\`TechCabal\`)**: Open Sans font with Cherry Red fills (\`#F23204\`).
-* **Zikoko (\`Zikoko\`)**: Cabin font with Purple fills (\`#9A2BC2\`).
-* **TCi (\`TCi\`)**: IBM Plex Sans font with Black/Neutral fills (\`#181818\`).
-* **BCM (\`BCM\`)**: Urbanist font with Neutral fills (\`#181818\`).
-
----
-
-### Usage & Hierarchy Rules
-1. **Primary (\`primary\`)**: Single main call-to-action per screen section (*Submit*, *Subscribe*).
-2. **Secondary & Outline (\`secondary\`, \`outline\`)**: Supporting or alternative triggers (*Cancel*, *Save Draft*).
-3. **Transparent (\`transparent\`)**: Ghost buttons for card headers or subtle inline links.
-4. **Error & Success (\`error\`, \`success\`)**: Destructive alerts (*Delete*) or completion triggers (*Success*).
-        `,
-      },
-    },
-  },
   argTypes: {
     brand: {
-      name: 'Brand Theme',
+      name: 'Brand Theme Override',
       control: 'select',
       options: ['TechCabal', 'Zikoko', 'TCi', 'BCM'],
       table: { category: 'Theming' },
@@ -86,7 +60,6 @@ The **Button** component triggers user actions across all BCM brands (**TechCaba
       control: 'boolean',
       table: { category: 'States' },
     },
-    // Hide raw ReactNode & standard HTML props
     leftIcon: { table: { disable: true } },
     rightIcon: { table: { disable: true } },
     children: { table: { disable: true } },
@@ -98,7 +71,6 @@ The **Button** component triggers user actions across all BCM brands (**TechCaba
     isPressed: { table: { disable: true } },
   },
   args: {
-    brand: 'TechCabal',
     typeVariant: 'primary',
     size: 'md',
     label: 'Button',
@@ -117,13 +89,6 @@ type Story = StoryObj<typeof Button>;
 export const Default: Story = {};
 
 export const AllVariants: Story = {
-  parameters: {
-    docs: {
-      description: {
-        story: 'Side-by-side view of all visual button variants across the active brand theme.',
-      },
-    },
-  },
   render: (args) => (
     <div style={{ display: 'flex', gap: '16px', alignItems: 'center', flexWrap: 'wrap' }}>
       <Button {...args} typeVariant="primary" label="Primary" />
@@ -137,13 +102,6 @@ export const AllVariants: Story = {
 };
 
 export const ButtonIconSet: Story = {
-  parameters: {
-    docs: {
-      description: {
-        story: 'Icon-only variant set (48x48px square trigger).',
-      },
-    },
-  },
   render: (args) => (
     <div style={{ display: 'flex', gap: '16px', alignItems: 'center' }}>
       <Button {...args} isIconOnly typeVariant="primary" />
@@ -155,13 +113,6 @@ export const ButtonIconSet: Story = {
 };
 
 export const InteractiveStatesGrid: Story = {
-  parameters: {
-    docs: {
-      description: {
-        story: 'Visual matrix showing Default, Hover, Focused, Pressed, and Inactive states.',
-      },
-    },
-  },
   render: (args) => {
     const states = [
       { title: 'Default', props: {} },

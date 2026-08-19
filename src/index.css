@@ -6,7 +6,7 @@
 }
 
 /* -------------------------------------------------------------------------- */
-/* BRAND COLOR TOKENS                                                         */
+/* BRAND COLOR & TYPOGRAPHY TOKENS                                            */
 /* -------------------------------------------------------------------------- */
 
 /* TechCabal Theme */
@@ -77,8 +77,8 @@
   --Inactive-Stroke: #E0E0E0;
 }
 
-/* TCi & BCM Themes */
-[data-theme="tci"], [data-theme="bcm"] {
+/* TCi Theme */
+[data-theme="tci"] {
   --Typography-Font-Primary: 'IBM Plex Sans', sans-serif;
   
   --Primary-Fill-Default: #181818;
@@ -111,8 +111,42 @@
   --Inactive-Stroke: #E0E0E0;
 }
 
+/* BCM Theme */
+[data-theme="bcm"] {
+  --Typography-Font-Primary: 'Urbanist', sans-serif;
+  
+  --Primary-Fill-Default: #181818;
+  --Primary-Fill-Hover: #292929;
+  --Primary-Text-Default: #FFFFFF;
+  --Primary-Focus-Stroke: #000000;
+
+  --Transparent-Text-Default: #181818;
+  --Transparent-Fill-Hover: #F5F5F5;
+
+  --Outline-Text-Default: #181818;
+  --Outline-Stroke-Default: #353535;
+  --Outline-Fill-Hover: #F5F5F5;
+
+  --Secondary-Fill-Default: #ECECEC;
+  --Secondary-Fill-Hover: #D8D8D8;
+  --Secondary-Text-Default: #181818;
+  --Secondary-Stroke-Default: #D1D1D1;
+
+  --Error-Fill-Default: #FDD8CE;
+  --Error-Text-Default: #F00000;
+  --Error-Stroke-Default: #F00000;
+
+  --Success-Fill-Default: #DFF3D8;
+  --Success-Text-Default: #387623;
+  --Success-Stroke-Default: #387623;
+
+  --Inactive-Fill: #F5F5F5;
+  --Inactive-Text: #B5B5B5;
+  --Inactive-Stroke: #E0E0E0;
+}
+
 /* -------------------------------------------------------------------------- */
-/* COMPONENT BASE & SIZING CLASSES                                            */
+/* COMPONENT BASE CLASS                                                       */
 /* -------------------------------------------------------------------------- */
 
 .ds-button {
@@ -121,7 +155,7 @@
   align-items: center;
   gap: 8px;
   border-radius: var(--Corner-radius-8px, 8px);
-  font-family: var(--Typography-Font-Primary, sans-serif);
+  font-family: var(--Typography-Font-Primary, sans-serif) !important;
   font-weight: 600;
   line-height: 1;
   border-width: 1px;
@@ -134,160 +168,40 @@
 }
 
 /* Size Variants */
-.ds-button-sm {
-  height: 36px;
-  padding: 0 12px;
-  font-size: 12px;
-}
-.ds-button-sm.ds-button-icon-only {
-  width: 36px;
-  padding: 0;
-}
+.ds-button-sm { height: 36px; padding: 0 12px; font-size: 12px; }
+.ds-button-sm.ds-button-icon-only { width: 36px; padding: 0; }
 
-.ds-button-md {
-  height: 48px;
-  padding: 0 16px;
-  font-size: 14px;
-}
-.ds-button-md.ds-button-icon-only {
-  width: 48px;
-  padding: 0;
-}
+.ds-button-md { height: 48px; padding: 0 16px; font-size: 14px; }
+.ds-button-md.ds-button-icon-only { width: 48px; padding: 0; }
 
-.ds-button-lg {
-  height: 56px;
-  padding: 0 20px;
-  font-size: 16px;
-}
-.ds-button-lg.ds-button-icon-only {
-  width: 56px;
-  padding: 0;
-}
+.ds-button-lg { height: 56px; padding: 0 20px; font-size: 16px; }
+.ds-button-lg.ds-button-icon-only { width: 56px; padding: 0; }
 
 /* Type Variants */
-.ds-button-primary {
-  background-color: var(--Primary-Fill-Default);
-  color: var(--Primary-Text-Default);
-  border-color: transparent;
-}
-.ds-button-primary:hover:not(:disabled),
-.ds-button-primary[data-hovered="true"] {
-  background-color: var(--Primary-Fill-Hover);
-}
-.ds-button-primary:focus-visible,
-.ds-button-primary[data-focused="true"] {
-  box-shadow: 0 0 0 2px #FFFFFF, 0 0 0 4px var(--Primary-Focus-Stroke);
-}
-.ds-button-primary:disabled,
-.ds-button-primary[data-disabled="true"] {
-  background-color: var(--Inactive-Fill);
-  color: var(--Inactive-Text);
-  border-color: transparent;
-  cursor: not-allowed;
-  pointer-events: none;
-}
+.ds-button-primary { background-color: var(--Primary-Fill-Default); color: var(--Primary-Text-Default); border-color: transparent; }
+.ds-button-primary:hover:not(:disabled), .ds-button-primary[data-hovered="true"] { background-color: var(--Primary-Fill-Hover); }
+.ds-button-primary:focus-visible, .ds-button-primary[data-focused="true"] { box-shadow: 0 0 0 2px #FFFFFF, 0 0 0 4px var(--Primary-Focus-Stroke); }
+.ds-button-primary:disabled, .ds-button-primary[data-disabled="true"] { background-color: var(--Inactive-Fill); color: var(--Inactive-Text); border-color: transparent; cursor: not-allowed; pointer-events: none; }
 
-.ds-button-transparent {
-  background-color: transparent;
-  color: var(--Transparent-Text-Default);
-  border-color: transparent;
-}
-.ds-button-transparent:hover:not(:disabled),
-.ds-button-transparent[data-hovered="true"] {
-  background-color: var(--Transparent-Fill-Hover);
-}
-.ds-button-transparent:focus-visible,
-.ds-button-transparent[data-focused="true"] {
-  background-color: var(--Transparent-Fill-Hover);
-  border-color: var(--Transparent-Text-Default);
-}
-.ds-button-transparent:disabled,
-.ds-button-transparent[data-disabled="true"] {
-  background-color: transparent;
-  color: var(--Inactive-Text);
-  border-color: transparent;
-  cursor: not-allowed;
-  pointer-events: none;
-}
+.ds-button-transparent { background-color: transparent; color: var(--Transparent-Text-Default); border-color: transparent; }
+.ds-button-transparent:hover:not(:disabled), .ds-button-transparent[data-hovered="true"] { background-color: var(--Transparent-Fill-Hover); }
+.ds-button-transparent:focus-visible, .ds-button-transparent[data-focused="true"] { background-color: var(--Transparent-Fill-Hover); border-color: var(--Transparent-Text-Default); }
+.ds-button-transparent:disabled, .ds-button-transparent[data-disabled="true"] { background-color: transparent; color: var(--Inactive-Text); border-color: transparent; cursor: not-allowed; pointer-events: none; }
 
-.ds-button-outline {
-  background-color: transparent;
-  color: var(--Outline-Text-Default);
-  border-color: var(--Outline-Stroke-Default);
-}
-.ds-button-outline:hover:not(:disabled),
-.ds-button-outline[data-hovered="true"] {
-  background-color: var(--Outline-Fill-Hover);
-}
-.ds-button-outline:focus-visible,
-.ds-button-outline[data-focused="true"] {
-  background-color: var(--Outline-Fill-Hover);
-  border-width: 2px;
-}
-.ds-button-outline:disabled,
-.ds-button-outline[data-disabled="true"] {
-  background-color: transparent;
-  color: var(--Inactive-Text);
-  border-color: var(--Inactive-Stroke);
-  cursor: not-allowed;
-  pointer-events: none;
-}
+.ds-button-outline { background-color: transparent; color: var(--Outline-Text-Default); border-color: var(--Outline-Stroke-Default); }
+.ds-button-outline:hover:not(:disabled), .ds-button-outline[data-hovered="true"] { background-color: var(--Outline-Fill-Hover); }
+.ds-button-outline:focus-visible, .ds-button-outline[data-focused="true"] { background-color: var(--Outline-Fill-Hover); border-width: 2px; }
+.ds-button-outline:disabled, .ds-button-outline[data-disabled="true"] { background-color: transparent; color: var(--Inactive-Text); border-color: var(--Inactive-Stroke); cursor: not-allowed; pointer-events: none; }
 
-.ds-button-secondary {
-  background-color: var(--Secondary-Fill-Default);
-  color: var(--Secondary-Text-Default);
-  border-color: var(--Secondary-Stroke-Default);
-}
-.ds-button-secondary:hover:not(:disabled),
-.ds-button-secondary[data-hovered="true"] {
-  background-color: var(--Secondary-Fill-Hover);
-}
-.ds-button-secondary:focus-visible,
-.ds-button-secondary[data-focused="true"] {
-  border-color: var(--Secondary-Text-Default);
-  border-width: 2px;
-}
-.ds-button-secondary:disabled,
-.ds-button-secondary[data-disabled="true"] {
-  background-color: var(--Inactive-Fill);
-  color: var(--Inactive-Text);
-  border-color: var(--Inactive-Stroke);
-  cursor: not-allowed;
-  pointer-events: none;
-}
+.ds-button-secondary { background-color: var(--Secondary-Fill-Default); color: var(--Secondary-Text-Default); border-color: var(--Secondary-Stroke-Default); }
+.ds-button-secondary:hover:not(:disabled), .ds-button-secondary[data-hovered="true"] { background-color: var(--Secondary-Fill-Hover); }
+.ds-button-secondary:focus-visible, .ds-button-secondary[data-focused="true"] { border-color: var(--Secondary-Text-Default); border-width: 2px; }
+.ds-button-secondary:disabled, .ds-button-secondary[data-disabled="true"] { background-color: var(--Inactive-Fill); color: var(--Inactive-Text); border-color: var(--Inactive-Stroke); cursor: not-allowed; pointer-events: none; }
 
-.ds-button-error {
-  background-color: var(--Error-Fill-Default);
-  color: var(--Error-Text-Default);
-  border-color: var(--Error-Stroke-Default);
-}
-.ds-button-error:hover:not(:disabled),
-.ds-button-error[data-hovered="true"] {
-  filter: brightness(0.96);
-}
-.ds-button-error:disabled,
-.ds-button-error[data-disabled="true"] {
-  background-color: var(--Inactive-Fill);
-  color: var(--Inactive-Text);
-  border-color: var(--Inactive-Stroke);
-  cursor: not-allowed;
-  pointer-events: none;
-}
+.ds-button-error { background-color: var(--Error-Fill-Default); color: var(--Error-Text-Default); border-color: var(--Error-Stroke-Default); }
+.ds-button-error:hover:not(:disabled), .ds-button-error[data-hovered="true"] { filter: brightness(0.96); }
+.ds-button-error:disabled, .ds-button-error[data-disabled="true"] { background-color: var(--Inactive-Fill); color: var(--Inactive-Text); border-color: var(--Inactive-Stroke); cursor: not-allowed; pointer-events: none; }
 
-.ds-button-success {
-  background-color: var(--Success-Fill-Default);
-  color: var(--Success-Text-Default);
-  border-color: var(--Success-Stroke-Default);
-}
-.ds-button-success:hover:not(:disabled),
-.ds-button-success[data-hovered="true"] {
-  filter: brightness(0.96);
-}
-.ds-button-success:disabled,
-.ds-button-success[data-disabled="true"] {
-  background-color: var(--Inactive-Fill);
-  color: var(--Inactive-Text);
-  border-color: var(--Inactive-Stroke);
-  cursor: not-allowed;
-  pointer-events: none;
-}
+.ds-button-success { background-color: var(--Success-Fill-Default); color: var(--Success-Text-Default); border-color: var(--Success-Stroke-Default); }
+.ds-button-success:hover:not(:disabled), .ds-button-success[data-hovered="true"] { filter: brightness(0.96); }
+.ds-button-success:disabled, .ds-button-success[data-disabled="true"] { background-color: var(--Inactive-Fill); color: var(--Inactive-Text); border-color: var(--Inactive-Stroke); cursor: not-allowed; pointer-events: none; }

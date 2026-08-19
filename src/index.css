@@ -308,3 +308,28 @@
 
   --Typography-Font-Primary: var(--Typography-Font-family-BCM-Primary);
 }
+
+/* -------------------------------------------------------------------------- */
+/* TIER 3: TAILWIND UTILITY MAPPING                                           */
+/* -------------------------------------------------------------------------- */
+@theme {
+  --color-btn-primary-fill: var(--Colors-Primary-Button-fill-Default);
+  --color-btn-primary-hover: var(--Colors-Primary-Button-fill-Hover);
+  --color-btn-primary-pressed: var(--Colors-Primary-Button-fill-Pressed);
+  --color-btn-primary-disabled: var(--Colors-Primary-Button-fill-Inactive);
+  --color-btn-primary-text: var(--Colors-Primary-Text-\&-icon-Default);
+  --color-btn-primary-border: var(--Colors-Primary-Button-stroke-Default);
+
+  --color-btn-secondary-fill: var(--Colors-Secondary-Button-fill-Default);
+  --color-btn-secondary-border: var(--Colors-Secondary-Button-stroke-Default);
+  --color-btn-secondary-text: var(--Colors-Secondary-Text-Label);
+
+  --color-btn-error-fill: var(--Colors-Error-Button-fill-Default);
+  --color-btn-error-border: var(--Colors-Error-Button-stroke-Default);
+
+  --color-btn-success-fill: var(--Colors-Success-Button-fill-Default);
+  --color-btn-success-border: var(--Colors-Success-Button-stroke-Default);
+
+  --font-brand: var(--Typography-Font-Primary);
+  --radius-button: var(--Spacing-\&-Corner-radius-xxs);
+}

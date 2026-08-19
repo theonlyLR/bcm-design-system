@@ -15,28 +15,27 @@ export const Button = ({
   ...props
 }: ButtonProps) => {
   const baseStyles =
-    'inline-flex items-center justify-center font-medium transition-all border cursor-pointer rounded-[var(--Spacing-\\&-Corner-radius-xxs)] disabled:opacity-50 disabled:pointer-events-none disabled:bg-[var(--Colors-Primary-Button-fill-Inactive)]';
+    'inline-flex items-center justify-center font-brand rounded-button font-medium border transition-all cursor-pointer disabled:opacity-50 disabled:pointer-events-none disabled:bg-btn-primary-disabled';
 
   const variantStyles = {
     primary:
-      'bg-[var(--Colors-Primary-Button-fill-Default)] text-[var(--Colors-Primary-Text-\\&-icon-Default)] border-[var(--Colors-Primary-Button-stroke-Default)] hover:bg-[var(--Colors-Primary-Button-fill-Hover)] active:bg-[var(--Colors-Primary-Button-fill-Pressed)]',
+      'bg-btn-primary-fill text-btn-primary-text border-btn-primary-border hover:bg-btn-primary-hover active:bg-btn-primary-pressed',
     secondary:
-      'bg-[var(--Colors-Secondary-Button-fill-Default)] text-[var(--Colors-Secondary-Text-Label)] border-[var(--Colors-Secondary-Button-stroke-Default)]',
+      'bg-btn-secondary-fill text-btn-secondary-text border-btn-secondary-border',
     error:
-      'bg-[var(--Colors-Error-Button-fill-Default)] text-[var(--Colors-Error-Button-stroke-Default)] border-[var(--Colors-Error-Button-stroke-Default)]',
+      'bg-btn-error-fill text-btn-error-border border-btn-error-border',
     success:
-      'bg-[var(--Colors-Success-Button-fill-Default)] text-[var(--Colors-Success-Button-stroke-Default)] border-[var(--Colors-Success-Button-stroke-Default)]',
+      'bg-btn-success-fill text-btn-success-border border-btn-success-border',
   };
 
   const sizeStyles = {
-    sm: 'h-8 px-[var(--Spacing-\\&-Corner-radius-xs)] text-xs',
-    md: 'h-10 px-[var(--Spacing-\\&-Corner-radius-s)] text-sm',
-    lg: 'h-12 px-[var(--Spacing-\\&-Corner-radius-l)] text-base',
+    sm: 'h-8 px-3 text-xs',
+    md: 'h-10 px-4 text-sm',
+    lg: 'h-12 px-6 text-base',
   };
 
   return (
     <button
-      style={{ fontFamily: 'var(--Typography-Font-Primary)' }}
       className={`${baseStyles} ${variantStyles[variant]} ${sizeStyles[size]} ${className}`}
       disabled={disabled}
       {...props}

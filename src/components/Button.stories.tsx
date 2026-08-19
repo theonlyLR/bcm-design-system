@@ -1,65 +1,67 @@
 import type { Meta, StoryObj } from '@storybook/react';
+import React from 'react';
 import { Button } from './Button';
 
 const meta: Meta<typeof Button> = {
-  title: 'Atomics/Button',
+  title: 'Components/Button',
   component: Button,
   tags: ['autodocs'],
   argTypes: {
     brand: {
+      name: 'Brand',
       control: 'select',
-      options: ['TC', 'Zkk', 'TCi', 'BCM'],
+      options: ['TechCabal', 'Zikoko', 'TCi', 'BCM'],
+      description: 'Select active brand theme',
     },
-    variant: {
-      control: 'select',
-      options: ['primary', 'secondary', 'outline', 'ghost'],
+    typeVariant: {
+      name: 'Type',
+      control: 'radio',
+      options: ['primary', 'secondary', 'outline', 'transparent'],
+      description: 'Figma Component Type',
     },
-    size: {
-      control: 'select',
-      options: ['s', 'm', 'l', 'xl'],
+    label: {
+      name: 'Label',
+      control: 'text',
+      description: 'Button text label',
     },
-    state: {
-      control: 'select',
-      options: ['default', 'hover', 'pressed', 'inactive'],
+    hasLeftIcon: {
+      name: 'Icon Left',
+      control: 'boolean',
+      description: 'Toggle left icon',
     },
+    hasRightIcon: {
+      name: 'Icon Right',
+      control: 'boolean',
+      description: 'Toggle right icon',
+    },
+    isLoading: {
+      name: 'Loading State',
+      control: 'boolean',
+      description: 'Toggle loading spinner',
+    },
+    disabled: {
+      name: 'Disabled (Inactive)',
+      control: 'boolean',
+      description: 'Toggle inactive state',
+    },
+    // Hide internal/redundant props from the control table
+    variant: { table: { disable: true } },
+    size: { table: { disable: true } },
+    rightIcon: { table: { disable: true } },
+    children: { table: { disable: true } },
+  },
+  args: {
+    brand: 'TechCabal',
+    typeVariant: 'primary',
+    label: 'Button',
+    hasLeftIcon: false,
+    hasRightIcon: true,
+    isLoading: false,
+    disabled: false,
   },
 };
 
 export default meta;
 type Story = StoryObj<typeof Button>;
 
-export const PrimaryTechCabal: Story = {
-  args: {
-    brand: 'TC',
-    variant: 'primary',
-    size: 'm',
-    children: 'TechCabal Action',
-  },
-};
-
-export const ZikokoVariant: Story = {
-  args: {
-    brand: 'Zkk',
-    variant: 'primary',
-    size: 'm',
-    children: 'Zikoko Action',
-  },
-};
-
-export const TechCabalInsightsVariant: Story = {
-  args: {
-    brand: 'TCi',
-    variant: 'outline',
-    size: 'm',
-    children: 'Download Report',
-  },
-};
-
-export const BCMParentBrand: Story = {
-  args: {
-    brand: 'BCM',
-    variant: 'primary',
-    size: 'l',
-    children: 'Big Cabal Media',
-  },
-};
+export const Default: Story = {};

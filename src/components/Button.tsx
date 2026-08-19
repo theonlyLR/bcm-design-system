@@ -1,42 +1,36 @@
 import React from 'react';
 
-export type ButtonType = 'primary' | 'transparent' | 'outline' | 'secondary';
+export type ButtonType = 'primary' | 'secondary' | 'outline' | 'transparent';
+export type BrandTheme = 'TechCabal' | 'Zikoko' | 'TCi' | 'BCM' | string;
 
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  /** Storybook / Figma Brand prop (e.g. Zkk, Zikoko, TC, TechCabal, TCi, BCM) */
-  brand?: string;
-  /** Figma Property: Type */
+  brand?: BrandTheme;
   typeVariant?: ButtonType;
-  /** Figma Layer: "Button" text */
   label?: string;
-  /** Figma Layer: spinner */
+  hasLeftIcon?: boolean;
+  hasRightIcon?: boolean;
   isLoading?: boolean;
-  /** Figma Layer: Right arrow */
-  rightIcon?: React.ReactNode;
-  /** Figma State: Status = Inactive */
   disabled?: boolean;
-  children?: React.ReactNode;
 }
 
 export const Button = ({
-  brand,
+  brand = 'TechCabal',
   typeVariant = 'primary',
   label = 'Button',
+  hasLeftIcon = false,
+  hasRightIcon = true,
   isLoading = false,
-  rightIcon,
   disabled = false,
-  children,
   className = '',
   style,
   ...props
 }: ButtonProps) => {
-  // Normalize brand prop values (e.g., "Zkk" or "Zikoko" -> "zikoko")
   const normalizeBrand = (b?: string) => {
-    if (!b) return undefined;
+    if (!b) return 'techcabal';
     const lower = b.toLowerCase().trim();
     if (lower.includes('zikoko') || lower === 'zkk') return 'zikoko';
-    if (lower.includes('techcabal') || lower === 'tc' || lower.includes('primary tech cabal')) return 'techcabal';
-    if (lower.includes('tci') || lower.includes('insights')) return 'tci';
+    if (lower.includes('techcabal') || lower === 'tc') return 'techcabal';
+    if (lower.includes('tci')) return 'tci';
     if (lower.includes('bcm')) return 'bcm';
     return lower;
   };
@@ -94,7 +88,7 @@ export const Button = ({
     ...style,
   };
 
-  const DefaultRightArrow = () => (
+  const ArrowIcon = ({ direction }: { direction: 'left' | 'right' }) => (
     <svg
       width="16"
       height="16"
@@ -106,7 +100,11 @@ export const Button = ({
       strokeLinejoin="round"
       style={{ width: '16px', height: '16px', flexShrink: 0 }}
     >
-      <path d="M5 12h14M12 5l7 7-7 7" />
+      {direction === 'right' ? (
+        <path d="M5 12h14M12 5l7 7-7 7" />
+      ) : (
+        <path d="M19 12H5M12 19l-7-7 7-7" />
+      )}
     </svg>
   );
 
@@ -132,8 +130,9 @@ export const Button = ({
         />
       ) : (
         <>
-          <span>{children || label}</span>
-          {rightIcon !== undefined ? rightIcon : <DefaultRightArrow />}
+          {hasLeftIcon && <ArrowIcon direction="left" />}
+          <span>{label}</span>
+          {hasRightIcon && <ArrowIcon direction="right" />}
         </>
       )}
     </button>

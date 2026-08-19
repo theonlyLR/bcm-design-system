@@ -13,28 +13,31 @@
 :root, [data-theme="techcabal"], [data-theme="tc"] {
   --Typography-Font-Primary: 'Open Sans', sans-serif;
   
-  /* Primary Variant */
   --Primary-Fill-Default: #F23204;
   --Primary-Fill-Hover: #FB4E22;
   --Primary-Text-Default: #FFFFFF;
   --Primary-Focus-Stroke: #501101;
 
-  /* Transparent Variant */
   --Transparent-Text-Default: #F23204;
   --Transparent-Fill-Hover: #FFEFEB;
 
-  /* Outline Variant */
   --Outline-Text-Default: #F23204;
   --Outline-Stroke-Default: #F23204;
   --Outline-Fill-Hover: #FFEFEB;
 
-  /* Secondary Variant (Row 4 Gray Trigger) */
   --Secondary-Fill-Default: #ECECEC;
   --Secondary-Fill-Hover: #D8D8D8;
   --Secondary-Text-Default: #181818;
   --Secondary-Stroke-Default: #D1D1D1;
 
-  /* Universal Inactive / Disabled Tokens */
+  --Error-Fill-Default: #FFE1DA;
+  --Error-Text-Default: #F23204;
+  --Error-Stroke-Default: #F23204;
+
+  --Success-Fill-Default: #DBEECD;
+  --Success-Text-Default: #548C2F;
+  --Success-Stroke-Default: #548C2F;
+
   --Inactive-Fill: #F5F5F5;
   --Inactive-Text: #B5B5B5;
   --Inactive-Stroke: #E0E0E0;
@@ -43,6 +46,7 @@
 /* Zikoko Theme */
 [data-theme="zikoko"], [data-theme="zkk"] {
   --Typography-Font-Primary: 'Cabin', sans-serif;
+  
   --Primary-Fill-Default: #9A2BC2;
   --Primary-Fill-Hover: #AB6BEB;
   --Primary-Text-Default: #FFFFFF;
@@ -60,6 +64,14 @@
   --Secondary-Text-Default: #181818;
   --Secondary-Stroke-Default: #D1D1D1;
 
+  --Error-Fill-Default: #FFDBDD;
+  --Error-Text-Default: #FF2E38;
+  --Error-Stroke-Default: #FF2E38;
+
+  --Success-Fill-Default: #D2FEEE;
+  --Success-Text-Default: #03B579;
+  --Success-Stroke-Default: #03B579;
+
   --Inactive-Fill: #F5F5F5;
   --Inactive-Text: #B5B5B5;
   --Inactive-Stroke: #E0E0E0;
@@ -68,6 +80,7 @@
 /* TCi & BCM Themes */
 [data-theme="tci"], [data-theme="bcm"] {
   --Typography-Font-Primary: 'IBM Plex Sans', sans-serif;
+  
   --Primary-Fill-Default: #181818;
   --Primary-Fill-Hover: #292929;
   --Primary-Text-Default: #FFFFFF;
@@ -85,13 +98,21 @@
   --Secondary-Text-Default: #181818;
   --Secondary-Stroke-Default: #D1D1D1;
 
+  --Error-Fill-Default: #FDD8CE;
+  --Error-Text-Default: #F00000;
+  --Error-Stroke-Default: #F00000;
+
+  --Success-Fill-Default: #DFF3D8;
+  --Success-Text-Default: #387623;
+  --Success-Stroke-Default: #387623;
+
   --Inactive-Fill: #F5F5F5;
   --Inactive-Text: #B5B5B5;
   --Inactive-Stroke: #E0E0E0;
 }
 
 /* -------------------------------------------------------------------------- */
-/* COMPONENT BASE & INTERACTION RULES                                          */
+/* COMPONENT BASE & SIZING CLASSES                                            */
 /* -------------------------------------------------------------------------- */
 
 .ds-button {
@@ -102,15 +123,48 @@
   border-radius: var(--Corner-radius-8px, 8px);
   font-family: var(--Typography-Font-Primary, sans-serif);
   font-weight: 600;
+  line-height: 1;
   border-width: 1px;
   border-style: solid;
   cursor: pointer;
   transition: all 0.15s ease-in-out;
   box-sizing: border-box;
   outline: none;
+  white-space: nowrap;
 }
 
-/* Row 1: Primary Button */
+/* Size Variants */
+.ds-button-sm {
+  height: 36px;
+  padding: 0 12px;
+  font-size: 12px;
+}
+.ds-button-sm.ds-button-icon-only {
+  width: 36px;
+  padding: 0;
+}
+
+.ds-button-md {
+  height: 48px;
+  padding: 0 16px;
+  font-size: 14px;
+}
+.ds-button-md.ds-button-icon-only {
+  width: 48px;
+  padding: 0;
+}
+
+.ds-button-lg {
+  height: 56px;
+  padding: 0 20px;
+  font-size: 16px;
+}
+.ds-button-lg.ds-button-icon-only {
+  width: 56px;
+  padding: 0;
+}
+
+/* Type Variants */
 .ds-button-primary {
   background-color: var(--Primary-Fill-Default);
   color: var(--Primary-Text-Default);
@@ -133,7 +187,6 @@
   pointer-events: none;
 }
 
-/* Row 2: Transparent Button */
 .ds-button-transparent {
   background-color: transparent;
   color: var(--Transparent-Text-Default);
@@ -157,7 +210,6 @@
   pointer-events: none;
 }
 
-/* Row 3: Outline Button */
 .ds-button-outline {
   background-color: transparent;
   color: var(--Outline-Text-Default);
@@ -181,7 +233,6 @@
   pointer-events: none;
 }
 
-/* Row 4: Secondary Button */
 .ds-button-secondary {
   background-color: var(--Secondary-Fill-Default);
   color: var(--Secondary-Text-Default);
@@ -198,6 +249,42 @@
 }
 .ds-button-secondary:disabled,
 .ds-button-secondary[data-disabled="true"] {
+  background-color: var(--Inactive-Fill);
+  color: var(--Inactive-Text);
+  border-color: var(--Inactive-Stroke);
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.ds-button-error {
+  background-color: var(--Error-Fill-Default);
+  color: var(--Error-Text-Default);
+  border-color: var(--Error-Stroke-Default);
+}
+.ds-button-error:hover:not(:disabled),
+.ds-button-error[data-hovered="true"] {
+  filter: brightness(0.96);
+}
+.ds-button-error:disabled,
+.ds-button-error[data-disabled="true"] {
+  background-color: var(--Inactive-Fill);
+  color: var(--Inactive-Text);
+  border-color: var(--Inactive-Stroke);
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.ds-button-success {
+  background-color: var(--Success-Fill-Default);
+  color: var(--Success-Text-Default);
+  border-color: var(--Success-Stroke-Default);
+}
+.ds-button-success:hover:not(:disabled),
+.ds-button-success[data-hovered="true"] {
+  filter: brightness(0.96);
+}
+.ds-button-success:disabled,
+.ds-button-success[data-disabled="true"] {
   background-color: var(--Inactive-Fill);
   color: var(--Inactive-Text);
   border-color: var(--Inactive-Stroke);

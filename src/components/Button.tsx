@@ -9,6 +9,8 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
   typeVariant?: ButtonType;
   size?: ButtonSize;
   label?: string;
+  hasLeftIcon?: boolean;
+  hasRightIcon?: boolean;
   leftIcon?: React.ReactNode;
   rightIcon?: React.ReactNode;
   isIconOnly?: boolean;
@@ -25,6 +27,8 @@ export const Button = ({
   typeVariant = 'primary',
   size = 'md',
   label = 'Button',
+  hasLeftIcon = false,
+  hasRightIcon = true,
   leftIcon,
   rightIcon,
   isIconOnly = false,
@@ -50,9 +54,23 @@ export const Button = ({
 
   const activeTheme = normalizeBrand(brand);
 
-  const DefaultArrow = () => (
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ width: '16px', height: '16px', flexShrink: 0 }}>
-      <path d="M5 12h14M12 5l7 7-7 7" />
+  const ArrowIcon = ({ direction }: { direction: 'left' | 'right' }) => (
+    <svg
+      width="16"
+      height="16"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      style={{ width: '16px', height: '16px', flexShrink: 0 }}
+    >
+      {direction === 'right' ? (
+        <path d="M5 12h14M12 5l7 7-7 7" />
+      ) : (
+        <path d="M19 12H5M12 19l-7-7 7-7" />
+      )}
     </svg>
   );
 
@@ -64,6 +82,18 @@ export const Button = ({
     fullWidth ? 'w-full justify-center' : '',
     className,
   ].filter(Boolean).join(' ');
+
+  const renderLeftIcon = () => {
+    if (leftIcon) return leftIcon;
+    if (hasLeftIcon) return <ArrowIcon direction="left" />;
+    return null;
+  };
+
+  const renderRightIcon = () => {
+    if (rightIcon !== undefined) return rightIcon;
+    if (hasRightIcon) return <ArrowIcon direction="right" />;
+    return null;
+  };
 
   return (
     <button
@@ -77,14 +107,24 @@ export const Button = ({
       {...props}
     >
       {isLoading ? (
-        <span style={{ width: '16px', height: '16px', border: '2px solid currentColor', borderTopColor: 'transparent', borderRadius: '50%', display: 'inline-block', animation: 'spin 1s linear infinite' }} />
+        <span
+          style={{
+            width: '16px',
+            height: '16px',
+            border: '2px solid currentColor',
+            borderTopColor: 'transparent',
+            borderRadius: '50%',
+            display: 'inline-block',
+            animation: 'spin 1s linear infinite',
+          }}
+        />
       ) : isIconOnly ? (
-        leftIcon || rightIcon || <DefaultArrow />
+        renderLeftIcon() || renderRightIcon() || <ArrowIcon direction="right" />
       ) : (
         <>
-          {leftIcon}
+          {renderLeftIcon()}
           <span>{children || label}</span>
-          {rightIcon !== undefined ? rightIcon : <DefaultArrow />}
+          {renderRightIcon()}
         </>
       )}
     </button>

@@ -45,6 +45,12 @@ The **Button** component triggers user actions across all BCM brands (**TechCaba
       options: ['primary', 'secondary', 'outline', 'transparent', 'error', 'success'],
       table: { category: 'Appearance' },
     },
+    size: {
+      name: 'Size',
+      control: 'radio',
+      options: ['sm', 'md', 'lg'],
+      table: { category: 'Appearance' },
+    },
     label: {
       name: 'Label Text',
       control: 'text',
@@ -60,6 +66,16 @@ The **Button** component triggers user actions across all BCM brands (**TechCaba
       control: 'boolean',
       table: { category: 'Icons' },
     },
+    isIconOnly: {
+      name: 'Icon Only Mode',
+      control: 'boolean',
+      table: { category: 'Icons' },
+    },
+    fullWidth: {
+      name: 'Full Width',
+      control: 'boolean',
+      table: { category: 'Layout' },
+    },
     isLoading: {
       name: 'Loading Spinner',
       control: 'boolean',
@@ -70,13 +86,13 @@ The **Button** component triggers user actions across all BCM brands (**TechCaba
       control: 'boolean',
       table: { category: 'States' },
     },
-    // Hide standard HTML / internal props from Controls table
+    // Hide raw ReactNode & standard HTML props
+    leftIcon: { table: { disable: true } },
+    rightIcon: { table: { disable: true } },
+    children: { table: { disable: true } },
     className: { table: { disable: true } },
     style: { table: { disable: true } },
     variant: { table: { disable: true } },
-    size: { table: { disable: true } },
-    rightIcon: { table: { disable: true } },
-    children: { table: { disable: true } },
     isHovered: { table: { disable: true } },
     isFocused: { table: { disable: true } },
     isPressed: { table: { disable: true } },
@@ -84,9 +100,12 @@ The **Button** component triggers user actions across all BCM brands (**TechCaba
   args: {
     brand: 'TechCabal',
     typeVariant: 'primary',
+    size: 'md',
     label: 'Button',
     hasLeftIcon: false,
     hasRightIcon: true,
+    isIconOnly: false,
+    fullWidth: false,
     isLoading: false,
     disabled: false,
   },
@@ -113,6 +132,24 @@ export const AllVariants: Story = {
       <Button {...args} typeVariant="transparent" label="Transparent" />
       <Button {...args} typeVariant="error" label="Error" />
       <Button {...args} typeVariant="success" label="Success" />
+    </div>
+  ),
+};
+
+export const ButtonIconSet: Story = {
+  parameters: {
+    docs: {
+      description: {
+        story: 'Icon-only variant set (48x48px square trigger).',
+      },
+    },
+  },
+  render: (args) => (
+    <div style={{ display: 'flex', gap: '16px', alignItems: 'center' }}>
+      <Button {...args} isIconOnly typeVariant="primary" />
+      <Button {...args} isIconOnly typeVariant="secondary" />
+      <Button {...args} isIconOnly typeVariant="outline" />
+      <Button {...args} isIconOnly typeVariant="transparent" />
     </div>
   ),
 };

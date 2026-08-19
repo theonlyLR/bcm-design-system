@@ -16,7 +16,7 @@
   --Primary-Fill-Default: #F23204;
   --Primary-Fill-Hover: #FB4E22;
   --Primary-Text-Default: #FFFFFF;
-  --Primary-Focus-Stroke: #501101;
+  --Primary-Focus-Stroke: #F23204;
 
   --Transparent-Text-Default: #F23204;
   --Transparent-Fill-Hover: #FFEFEB;
@@ -50,7 +50,7 @@
   --Primary-Fill-Default: #9A2BC2;
   --Primary-Fill-Hover: #AB6BEB;
   --Primary-Text-Default: #FFFFFF;
-  --Primary-Focus-Stroke: #570095;
+  --Primary-Focus-Stroke: #9A2BC2;
 
   --Transparent-Text-Default: #9A2BC2;
   --Transparent-Fill-Hover: #EDEBFF;
@@ -84,7 +84,7 @@
   --Primary-Fill-Default: #181818;
   --Primary-Fill-Hover: #292929;
   --Primary-Text-Default: #FFFFFF;
-  --Primary-Focus-Stroke: #000000;
+  --Primary-Focus-Stroke: #181818;
 
   --Transparent-Text-Default: #181818;
   --Transparent-Fill-Hover: #F5F5F5;
@@ -118,7 +118,7 @@
   --Primary-Fill-Default: #181818;
   --Primary-Fill-Hover: #292929;
   --Primary-Text-Default: #FFFFFF;
-  --Primary-Focus-Stroke: #000000;
+  --Primary-Focus-Stroke: #181818;
 
   --Transparent-Text-Default: #181818;
   --Transparent-Fill-Hover: #F5F5F5;
@@ -146,7 +146,7 @@
 }
 
 /* -------------------------------------------------------------------------- */
-/* COMPONENT BASE CLASS                                                       */
+/* COMPONENT BASE CLASS & SIZING                                             */
 /* -------------------------------------------------------------------------- */
 
 .ds-button {

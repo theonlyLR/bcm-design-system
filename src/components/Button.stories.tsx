@@ -6,6 +6,32 @@ const meta: Meta<typeof Button> = {
   title: 'Atomics/Button',
   component: Button,
   tags: ['autodocs'],
+  parameters: {
+    docs: {
+      description: {
+        component: `
+### Overview
+The **Button** component triggers user actions across all BCM brands (**TechCabal**, **Zikoko**, **TCi**, **BCM**). It automatically adjusts color fills, stroke borders, and font typography based on the selected brand theme.
+
+---
+
+### Brand Typography & Fills
+* **TechCabal (\`TechCabal\`)**: Open Sans font with Cherry Red fills (\`#F23204\`).
+* **Zikoko (\`Zikoko\`)**: Cabin font with Purple fills (\`#9A2BC2\`).
+* **TCi (\`TCi\`)**: IBM Plex Sans font with Black/Neutral fills (\`#181818\`).
+* **BCM (\`BCM\`)**: Urbanist font with Neutral fills (\`#181818\`).
+
+---
+
+### Usage & Hierarchy Rules
+1. **Primary (\`primary\`)**: Single main call-to-action per screen section (*Submit*, *Subscribe*).
+2. **Secondary & Outline (\`secondary\`, \`outline\`)**: Supporting or alternative triggers (*Cancel*, *Save Draft*).
+3. **Transparent (\`transparent\`)**: Ghost buttons for card headers or subtle inline links.
+4. **Error & Success (\`error\`, \`success\`)**: Destructive alerts (*Delete*) or completion triggers (*Success*).
+        `,
+      },
+    },
+  },
   argTypes: {
     brand: {
       name: 'Brand Theme Override',

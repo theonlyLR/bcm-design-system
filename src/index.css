@@ -1,38 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=Open+Sans:wght@400;500;600;700&family=Urbanist:wght@400;500;600;700&display=swap');
 @import "tailwindcss";
 
-/* -------------------------------------------------------------------------- */
-/* TIER 1: PRIMITIVES                                                         */
-/* -------------------------------------------------------------------------- */
 :root {
-  /* Zikoko Primitives */
-  --Colours-Brands-Zikoko-Purple-50: #F7F2FDFF;
-  --Colours-Brands-Zikoko-Purple-100: #EDE0FBFF;
-  --Colours-Brands-Zikoko-Purple-500: #AB6BEBFF;
-  --Colours-Brands-Zikoko-Purple-600: #9A2BC2FF;
-  --Colours-Brands-Zikoko-Purple-800: #570095FF;
-  --Colours-Brands-Zikoko-Indigo-100: #EDEBFFFF;
-
-  /* TechCabal Primitives */
-  --Colours-Brands-TC-Cherry-Red-50: #FFEFEBFF;
-  --Colours-Brands-TC-Cherry-Red-600: #FB4E22FF;
-  --Colours-Brands-TC-Cherry-Red-700: #F23204FF;
-  --Colours-Brands-TC-Cherry-Red-900: #501101FF;
-
-  /* TCi & BCM Primitives */
-  --Colours-Brands-TCi-Black-600: #292929FF;
-  --Colours-Brands-TCi-Black-800: #181818FF;
-  --Colours-Brands-TCi-Black-950: #000000FF;
-  --Colours-Brands-TCi-Grey-200: #ECECECFF;
-  --Colours-Neutrals-Black-500: #353535FF;
-  --Colours-Neutrals-Grey-800: #373736FF;
-
-  /* Corner Radius */
   --Corner-radius-8px: 8px;
 }
-
-/* -------------------------------------------------------------------------- */
-/* TIER 2: BRAND THEMES                                                        */
-/* -------------------------------------------------------------------------- */
 
 /* Brand 1: TechCabal */
 :root, [data-theme="techcabal"], [data-theme="tc"] {
@@ -43,6 +14,7 @@
   --Colors-Secondary-Button-stroke-Default: #FB4E22;
   --Colors-Secondary-Text-Label: #F23204;
   --Colors-Primary-Text-and-icon-Default: #FFFFFF;
+  --Typography-Font-Primary: 'Open Sans', sans-serif;
 }
 
 /* Brand 2: Zikoko */
@@ -54,6 +26,7 @@
   --Colors-Secondary-Button-stroke-Default: #AB6BEB;
   --Colors-Secondary-Text-Label: #9A2BC2;
   --Colors-Primary-Text-and-icon-Default: #FFFFFF;
+  --Typography-Font-Primary: 'Cabin', sans-serif;
 }
 
 /* Brand 3: TCi */
@@ -65,6 +38,7 @@
   --Colors-Secondary-Button-stroke-Default: #353535;
   --Colors-Secondary-Text-Label: #373736;
   --Colors-Primary-Text-and-icon-Default: #FFFFFF;
+  --Typography-Font-Primary: 'IBM Plex Sans', sans-serif;
 }
 
 /* Brand 4: BCM */
@@ -76,4 +50,5 @@
   --Colors-Secondary-Button-stroke-Default: #353535;
   --Colors-Secondary-Text-Label: #373736;
   --Colors-Primary-Text-and-icon-Default: #FFFFFF;
+  --Typography-Font-Primary: 'Urbanist', sans-serif;
 }

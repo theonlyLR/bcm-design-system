@@ -75,7 +75,7 @@ export const Button = ({
     alignItems: 'center',
     gap: '8px',
     borderRadius: 'var(--Corner-radius-8px, 8px)',
-    fontFamily: 'var(--Typography-Font-Primary, system-ui, sans-serif)',
+    fontFamily: 'var(--Typography-Font-Primary, sans-serif)',
     fontSize: '14px',
     fontWeight: 600,
     borderWidth: '1px',
